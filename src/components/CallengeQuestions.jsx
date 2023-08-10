@@ -64,7 +64,7 @@ function CallengeQuestions() {
       alignItems: "center",
       justifyContent: "center",
       color: "white",
-
+      cursor: "pointer",
       borderRadius: "50%",
       fontSize: "1.2rem",
     },
@@ -122,45 +122,11 @@ function CallengeQuestions() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [totalPoints, setTotalPoints] = useState(0);
 
-  const [zero, setZero] = useState(false);
-  const [one, setOne] = useState(false);
-  const [two, setTwo] = useState(false);
-  const [three, setThree] = useState(false);
-  const [four, setFour] = useState(false);
+  const [activeButton, setActiveButton] = useState(null);
 
   const handleAnswerClick = (points) => {
     setTotalPoints(totalPoints + points);
-    if (points === "0") {
-      setZero(true);
-      setOne(false);
-      setTwo(false);
-      setThree(false);
-      setFour(false);
-    } else if (points === "1") {
-      setZero(false);
-      setOne(true);
-      setTwo(false);
-      setThree(false);
-      setFour(false);
-    } else if (points === "2") {
-      setZero(false);
-      setOne(false);
-      setTwo(true);
-      setThree(false);
-      setFour(false);
-    } else if (points === "3") {
-      setZero(false);
-      setOne(false);
-      setTwo(false);
-      setThree(true);
-      setFour(false);
-    } else if (points === "4") {
-      setZero(false);
-      setOne(false);
-      setTwo(false);
-      setThree(false);
-      setFour(true);
-    }
+    setActiveButton(points);
   };
 
   const handleNextQuestion = () => {
@@ -254,36 +220,41 @@ function CallengeQuestions() {
               <Box sx={style.pointBo}>
                 <Box
                   onClick={() => handleAnswerClick(0)}
-                  sx={style.points}
-                  backgroundColor={zero ? "blue" : "#429F46"}
+                  sx={[
+                    style.points,
+                    {
+                      backgroundColor:
+                        activeButton === 0 ? "#27772A" : "#429F46",
+                    },
+                  ]}
                 >
                   0
                 </Box>
                 <Box
                   onClick={() => handleAnswerClick(1)}
                   sx={style.points}
-                  backgroundColor={one ? "blue" : "#C0CA33"}
+                  backgroundColor={activeButton === 1 ? "#969E1F" : "#C0CA33"}
                 >
                   1
                 </Box>
                 <Box
                   onClick={() => handleAnswerClick(2)}
                   sx={style.points}
-                  backgroundColor={two ? "blue" : "#FDD835"}
+                  backgroundColor={activeButton === 2 ? "#D5AE00" : "#FDD835"}
                 >
                   2
                 </Box>
                 <Box
                   onClick={() => handleAnswerClick(3)}
                   sx={style.points}
-                  backgroundColor={three ? "blue" : "#FB8C00"}
+                  backgroundColor={activeButton === 3 ? "#C76F00" : "#FB8C00"}
                 >
                   3
                 </Box>
                 <Box
                   onClick={() => handleAnswerClick(4)}
                   sx={style.points}
-                  backgroundColor={four ? "blue" : "#E53733"}
+                  backgroundColor={activeButton === 4 ? "#B71916" : "#E53733"}
                 >
                   4
                 </Box>
