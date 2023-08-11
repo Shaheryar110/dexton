@@ -10,7 +10,7 @@ function HomePage() {
       backgroundImage: `url(${homeImg.src})`,
       backgroundSize: "cover",
       width: "100%",
-      height: "120vh",
+      height: "130vh",
       position: "relative",
       zIndex: "-1",
     },
@@ -41,30 +41,7 @@ function HomePage() {
         href="/callenge-question"
         style={{ textDecoration: "none", color: "inherit" }}
       >
-        <Box sx={style.bg}>
-          <Typography variant="h1" sx={style.welcome}>
-            WELCOME TO
-          </Typography>
-          <Typography variant="h1" sx={style.text}>
-            CALLENGE TEST
-          </Typography>
-          <Button
-            sx={{
-              backgroundColor: "#453011",
-              fontSize: "1.5rem",
-              color: "white",
-              paddingY: "1rem",
-              paddingX: "1rem",
-              borderRadius: "10px",
-              boxShadow: "7px 6px 13px -4px rgba(0,0,0,0.75)",
-              bottom: 30,
-              position: "absolute",
-              left: "45%",
-            }}
-          >
-            LETS GET STARTED
-          </Button>
-        </Box>
+        <Box sx={style.bg}></Box>
       </Link>
     </>
   );
