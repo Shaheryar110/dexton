@@ -1,14 +1,12 @@
-import { Box, Button, Typography, Container, Grid } from "@mui/material";
-import Link from "next/link";
-import React from "react";
-import homeImg from "../assets/image/home.jpg";
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import { Container, Box, Grid, Typography, Slide, Button } from "@mui/material";
 import Image from "next/image";
-import bg from "../assets/image/bg.jpg";
-import back from "../assets/image/back.png";
+import React, { useEffect, useState } from "react";
+
+import bg from "../../assets/image/bg.jpg";
+
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 
-function HomePage() {
+function BannerImg({ img, category, func, slide }) {
   const style = {
     container: {
       maxWidth: { xl: "900px" },
@@ -143,19 +141,18 @@ function HomePage() {
     heading: {
       color: "white",
       fontWeight: 700,
-      paddingRight: "3rem",
-      paddingTop: "2rem",
+      paddingRight: "4rem",
+      paddingTop: "4rem",
+      fontSize: "3rem",
+      fontFamily: "Roboto Slab, sans-serif",
     },
     btn: {
-      backgroundColor: "#082958",
+      backgroundColor: "white",
       fontWeight: 700,
-      color: "white",
+      color: "#082958",
       marginBottom: "2rem",
       fontSize: "1rem",
       marginRight: "3rem",
-      borderRadius: "50px",
-      paddingY: "1rem",
-      paddingX: "3rem",
       ":hover": {
         backgroundColor: "#082958",
         color: "white",
@@ -202,10 +199,10 @@ function HomePage() {
     },
   };
   return (
-    <>
-      <Box sx={style.bg}>
-        <Box sx={style.textBoxImg}>
-          <Container sx={style.container1}>
+    <Box sx={style.bg}>
+      <Box sx={style.textBoxImg}>
+        <Container sx={style.container1}>
+          <Slide direction="left" in={slide} mountOnEnter unmountOnExit>
             <Grid
               container
               sx={[
@@ -221,7 +218,7 @@ function HomePage() {
                   }}
                 >
                   <Image
-                    src={back}
+                    src={img}
                     style={{
                       width: "100%",
                       height: "100%",
@@ -230,30 +227,26 @@ function HomePage() {
                   />
                 </Box>
                 <Box sx={style.content}>
-                  <Typography variant="h4" sx={style.heading}></Typography>
-                  <Link
-                    href="callenge-question"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <Button variant="outlined" sx={style.btn}>
-                      LETS STARTED
-                      <TrendingFlatIcon
-                        sx={{
-                          color: "white",
-                          backgroundColor: "#082958",
-                          borderRadius: "50px",
-                        }}
-                      />
-                    </Button>
-                  </Link>
+                  <Typography variant="h4" sx={style.heading}>
+                    {category}
+                  </Typography>
+                  <Button variant="outlined" sx={style.btn} onClick={func}>
+                    LETS STARTED
+                    <TrendingFlatIcon
+                      sx={{
+                        color: "#082958",
+                        ":hover": { color: "white" },
+                      }}
+                    />
+                  </Button>
                 </Box>
               </Grid>
             </Grid>
-          </Container>
-        </Box>
+          </Slide>
+        </Container>
       </Box>
-    </>
+    </Box>
   );
 }
 
-export default HomePage;
+export default BannerImg;
