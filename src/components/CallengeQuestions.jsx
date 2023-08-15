@@ -1,12 +1,9 @@
 import { Container, Box, Grid, Typography, Slide, Button } from "@mui/material";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { Caprasimo } from "next/font/google";
+
 import { Patua_One } from "next/font/google";
-const caprismo = Caprasimo({
-  subsets: ["latin"],
-  weight: ["400"],
-});
+
 const patua = Patua_One({
   subsets: ["latin"],
   weight: ["400"],
@@ -75,7 +72,7 @@ import digestive7 from "../assets/image/digestive7.png";
 import digestive8 from "../assets/image/digestive8s.png";
 import digestive9 from "../assets/image/digestive9.png";
 import kidney from "../assets/image/kidney.png";
-import kidne1 from "../assets/image/kidney1.png";
+import kidne1 from "../assets/image/Kidney1.png";
 import kidne2 from "../assets/image/kidney2.png";
 import kidne3 from "../assets/image/kidney3.png";
 import kidne4 from "../assets/image/kidney4.png";
