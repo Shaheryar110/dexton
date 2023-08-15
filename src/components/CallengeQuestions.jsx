@@ -21,13 +21,67 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 import BannerImg from "./Common/BannerImg";
-import skin from "../assets/image/skin.jpg";
+import skin from "../assets/image/skin.png";
+import skin1 from "../assets/image/skin1.jpg";
+import skin2 from "../assets/image/skin2.png";
+import skin3 from "../assets/image/skin3.jpg";
+import skin4 from "../assets/image/skin4.png";
+import skin5 from "../assets/image/skin5.jpg";
+import skin6 from "../assets/image/skin6.png";
+import skin7 from "../assets/image/skin7.jpg";
+import skin8 from "../assets/image/skin8.jpg";
+import skin9 from "../assets/image/skin9.png";
 import earNose from "../assets/image/ear.png";
+import ear1 from "../assets/image/ear1.png";
+import ear2 from "../assets/image/ear2.png";
+import ear3 from "../assets/image/ear3.png";
+import ear4 from "../assets/image/ear4.jpg";
+import ear5 from "../assets/image/ear5.png";
+import ear6 from "../assets/image/ear6.png";
+import ear7 from "../assets/image/ear7.png";
+import ear8 from "../assets/image/ear8.jpg";
+import ear9 from "../assets/image/ear9.png";
+
 import brain from "../assets/image/brain.png";
+import brain1 from "../assets/image/brain1.png";
+import brain2 from "../assets/image/brain2.png";
+import brain3 from "../assets/image/brain3.jpg";
+import brain4 from "../assets/image/brain4.png";
+import brain5 from "../assets/image/brain5.png";
+import brain6 from "../assets/image/brain6.jpg";
+import brain7 from "../assets/image/brain7.png";
+import brain8 from "../assets/image/brain8.png";
+import brain9 from "../assets/image/brain9.jpg";
+import brain10 from "../assets/image/brain10.jpg";
+
 import digest from "../assets/image/digestive.png";
+import digestive1 from "../assets/image/digestive1.png";
+import digestive2 from "../assets/image/digestive2.png";
+import digestive3 from "../assets/image/digestive3.jpg";
+import digestive4 from "../assets/image/digestive4.png";
+import digestive5 from "../assets/image/digestive5.jpg";
+import digestive6 from "../assets/image/digestive6.jpg";
+import digestive7 from "../assets/image/digestive7.png";
+import digestive8 from "../assets/image/digestive8.png";
+import digestive9 from "../assets/image/digestive9.png";
 import kidney from "../assets/image/kidney.png";
+import kidne1 from "../assets/image/kidney1.png";
+import kidne2 from "../assets/image/kidney2.png";
+import kidne3 from "../assets/image/kidney3.png";
+import kidne4 from "../assets/image/kidney4.png";
+import kidne5 from "../assets/image/kidney5.png";
 import joint from "../assets/image/joints.png";
+import joint1 from "../assets/image/joint1.png";
+import joint2 from "../assets/image/joint2.png";
+import joint3 from "../assets/image/joint3.png";
+import joint4 from "../assets/image/joint4.png";
+import joint5 from "../assets/image/joint5.png";
+import joint6 from "../assets/image/joint6.png";
 import meta from "../assets/image/meta.jpg";
+import meta1 from "../assets/image/meta1.png";
+import meta2 from "../assets/image/meta2.png";
+import meta3 from "../assets/image/meta3.png";
+import meta4 from "../assets/image/meta4.png";
 
 function CallengeQuestions() {
   const style = {
@@ -244,122 +298,122 @@ function CallengeQuestions() {
     },
     {
       question: "Increased sweating, ear wax, oily skin ",
-      image: Irritablity,
+      image: skin1,
       questionNumber: 1,
     },
-    { question: "Skin rashes ?", image: Nervousness, questionNumber: 2 },
+    { question: "Skin rashes ?", image: skin2, questionNumber: 2 },
     {
       question: "Brown spots on hands and face ?",
-      image: Moodswings,
+      image: skin3,
       questionNumber: 3,
     },
-    { question: "Boils ?", image: frequentcrying, questionNumber: 4 },
+    { question: "Boils ?", image: skin4, questionNumber: 4 },
     {
       question: "Skin tags (small hanging warts) ?",
-      image: Aggressive,
+      image: skin5,
       questionNumber: 5,
     },
-    { question: "Acne ?", image: Anxiety, questionNumber: 6 },
-    { question: "Eczema ?", image: fear, questionNumber: 7 },
-    { question: "Fever Blisters ?", image: confusion, questionNumber: 8 },
-    { question: "Warts ?", image: Depression, questionNumber: 9 },
+    { question: "Acne ?", image: skin6, questionNumber: 6 },
+    { question: "Eczema ?", image: skin7, questionNumber: 7 },
+    { question: "Fever Blisters ?", image: skin8, questionNumber: 8 },
+    { question: "Warts ?", image: skin9, questionNumber: 9 },
 
     { category: " ", image: earNose },
 
-    { question: "Increase salivation ?", image: Aggressive, questionNumber: 1 },
-    { question: "Mouth Ulcers ?", image: Anxiety, questionNumber: 2 },
-    { question: "Common cold ?", image: fear, questionNumber: 3 },
-    { question: "Sinusitis ?", image: confusion, questionNumber: 4 },
-    { question: "Sore throats ?", image: Depression, questionNumber: 5 },
-    { question: "Ear Infections ?", image: Depression, questionNumber: 6 },
-    { question: "Hay Fever ?", image: Depression, questionNumber: 7 },
-    { question: "Loss of smell ?", image: Depression, questionNumber: 8 },
-    { question: "Cough ?", image: Depression, questionNumber: 9 },
+    { question: "Increase salivation ?", image: ear1, questionNumber: 1 },
+    { question: "Mouth Ulcers ?", image: ear2, questionNumber: 2 },
+    { question: "Common cold ?", image: ear3, questionNumber: 3 },
+    { question: "Sinusitis ?", image: ear4, questionNumber: 4 },
+    { question: "Sore throats ?", image: ear5, questionNumber: 5 },
+    { question: "Ear Infections ?", image: ear6, questionNumber: 6 },
+    { question: "Hay Fever ?", image: ear7, questionNumber: 7 },
+    { question: "Loss of smell ?", image: ear8, questionNumber: 8 },
+    { question: "Cough ?", image: ear9, questionNumber: 9 },
     { category: " ", image: brain },
-    { question: "Hyperactivity ?", image: Depression, questionNumber: 1 },
+    { question: "Hyperactivity ?", image: brain1, questionNumber: 1 },
     {
       question: "Stammering when speaking or problem finding words ?",
-      image: Depression,
+      image: brain2,
       questionNumber: 2,
     },
     {
       question: "Difficulty in concentration ?",
-      image: Depression,
+      image: brain3,
       questionNumber: 3,
     },
     {
       question: "Difficulty in making decisions ?",
-      image: Depression,
+      image: brain4,
       questionNumber: 4,
     },
-    { question: "Headache ?", image: Depression, questionNumber: 5 },
-    { question: "Poor memory ?", image: Depression, questionNumber: 6 },
-    { question: "Poor coordination ?", image: Depression, questionNumber: 7 },
-    { question: "Compulsive behavior ?", image: Depression, questionNumber: 8 },
-    { question: "Sleep disturbance ?", image: Depression, questionNumber: 9 },
-    { question: "Memory loss ?", image: Depression, questionNumber: 10 },
+    { question: "Headache ?", image: brain5, questionNumber: 5 },
+    { question: "Poor memory ?", image: brain6, questionNumber: 6 },
+    { question: "Poor coordination ?", image: brain7, questionNumber: 7 },
+    { question: "Compulsive behavior ?", image: brain8, questionNumber: 8 },
+    { question: "Sleep disturbance ?", image: brain9, questionNumber: 9 },
+    { question: "Memory loss ?", image: brain10, questionNumber: 10 },
 
     { category: "  ", image: digest },
 
-    { question: "Loose stools ?", image: Depression, questionNumber: 1 },
-    { question: "Diarrhea ?", image: Depression, questionNumber: 2 },
-    { question: "Heartburn ?", image: Depression, questionNumber: 3 },
-    { question: "Constipation ?", image: Depression, questionNumber: 4 },
-    { question: "Bloating ?", image: Depression, questionNumber: 5 },
-    { question: "Abdominal pain ?", image: Depression, questionNumber: 6 },
+    { question: "Loose stools ?", image: digestive1, questionNumber: 1 },
+    { question: "Diarrhea ?", image: digestive2, questionNumber: 2 },
+    { question: "Heartburn ?", image: digestive3, questionNumber: 3 },
+    { question: "Constipation ?", image: digestive4, questionNumber: 4 },
+    { question: "Bloating ?", image: digestive5, questionNumber: 5 },
+    { question: "Abdominal pain ?", image: digestive6, questionNumber: 6 },
     {
       question: "Intolerance to certain foods ?",
-      image: Depression,
+      image: digestive7,
       questionNumber: 7,
     },
-    { question: "Nausea or vomiting ?", image: Depression, questionNumber: 8 },
+    { question: "Nausea or vomiting ?", image: digestive8, questionNumber: 8 },
     {
       question: "Severe diarrhea with blood or mucous ?",
-      image: Depression,
+      image: digestive9,
       questionNumber: 9,
     },
     { category: " ", image: kidney },
     {
       question: "Increase in urination frequency and amount ?",
-      image: Depression,
+      image: kidne1,
       questionNumber: 1,
     },
     {
       question: "Needing to get uo in the night to pass urine ?",
-      image: Depression,
+      image: kidne2,
       questionNumber: 2,
     },
     {
       question: "Urinary tract infections and cystitis ?",
-      image: Depression,
+      image: kidne3,
       questionNumber: 3,
     },
-    { question: "Kidney stones ?", image: Depression, questionNumber: 4 },
-    { question: "Blood in urine ?", image: Depression, questionNumber: 5 },
+    { question: "Kidney stones ?", image: kidne4, questionNumber: 4 },
+    { question: "Blood in urine ?", image: kidne5, questionNumber: 5 },
     { category: " ", image: joint },
     {
       question: "Fleeting muscle aches or joints aches ?",
-      image: Depression,
+      image: joint1,
       questionNumber: 1,
     },
     {
       question:
         "Tendinitis (e.g., tennis elbow, golfer's elbow, achilles tendinitis) ?",
-      image: Depression,
+      image: joint2,
       questionNumber: 2,
     },
-    { question: "Gout ?", image: Depression, questionNumber: 3 },
-    { question: "Arthritis ?", image: Depression, questionNumber: 4 },
-    { question: "Fibromyalgia ?", image: Depression, questionNumber: 5 },
+    { question: "Gout ?", image: joint3, questionNumber: 3 },
+    { question: "Arthritis ?", image: joint4, questionNumber: 4 },
+    { question: "Fibromyalgia ?", image: joint5, questionNumber: 5 },
     { category: " ", image: meta },
-    { question: "Feeling of coldness ?", image: Depression, questionNumber: 1 },
-    { question: "Hypoglycemia ?", image: Depression, questionNumber: 2 },
+    { question: "Feeling of coldness ?", image: meta1, questionNumber: 1 },
+    { question: "Hypoglycemia ?", image: meta2, questionNumber: 2 },
     {
       question: "Craving certain foods ?",
-      image: Depression,
+      image: meta3,
       questionNumber: 3,
     },
-    { question: "Water retention ?", image: Depression, questionNumber: 4 },
+    { question: "Water retention ?", image: meta4, questionNumber: 4 },
     { question: "Obesity ?", image: Depression, questionNumber: 5 },
     { question: "Cellulite ?", image: Depression, questionNumber: 6 },
   ];
@@ -574,7 +628,7 @@ function CallengeQuestions() {
                     }}
                   >
                     <Image
-                      sx={{ height: "400px", width: "100%" }}
+                      sx={{ height: "100%", width: "100%" }}
                       src={currentImage}
                       alt="oops"
                     />
