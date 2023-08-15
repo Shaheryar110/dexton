@@ -221,95 +221,147 @@ function CallengeQuestions() {
   };
   const emotion = [
     {
-      category: "EMOTIONS",
+      category: "EMOTION TEST",
       image: emotionImg,
     },
-    { question: "Irritability ?", image: Irritablity },
-    { question: "Nervousness ?", image: Nervousness },
-    { question: "Mood swings ?", image: Moodswings },
-    { question: "Frequent crying ?", image: frequentcrying },
-    { question: "Aggressive behavior, i.e., road rage ?", image: Aggressive },
-    { question: "Anxiety ?", image: Anxiety },
-    { question: "Fear ?", image: fear },
-    { question: "Confusion ?", image: confusion },
-    { question: "Depression ?", image: Depression },
-    { question: "Suicidal thoughts ?", image: Sucidial },
+    { question: "Irritability ?", image: Irritablity, questionNumber: 1 },
+    { question: "Nervousness ?", image: Nervousness, questionNumber: 2 },
+    { question: "Mood swings ?", image: Moodswings, questionNumber: 3 },
+    { question: "Frequent crying ?", image: frequentcrying, questionNumber: 4 },
     {
-      category: "skin",
+      question: "Aggressive behavior, i.e., road rage ?",
+      image: Aggressive,
+      questionNumber: 5,
+    },
+    { question: "Anxiety ?", image: Anxiety, questionNumber: 6 },
+    { question: "Fear ?", image: fear, questionNumber: 7 },
+    { question: "Confusion ?", image: confusion, questionNumber: 8 },
+    { question: "Depression ?", image: Depression, questionNumber: 9 },
+    { question: "Suicidal thoughts ?", image: Sucidial, questionNumber: 10 },
+    {
+      category: " ",
       image: skin,
     },
-    { question: "Increased sweating, ear wax, oily skin ", image: Irritablity },
-    { question: "Skin rashes ?", image: Nervousness },
-    { question: "Brown spots on hands and face ?", image: Moodswings },
-    { question: "Boils ?", image: frequentcrying },
-    { question: "Skin tags (small hanging warts) ?", image: Aggressive },
-    { question: "Acne ?", image: Anxiety },
-    { question: "Eczema ?", image: fear },
-    { question: "Fever Blisters ?", image: confusion },
-    { question: "Warts ?", image: Depression },
-    { category: "Ear, Nose and Throat ", image: earNose },
-    { question: "Increase salivation ?", image: Aggressive },
-    { question: "Mouth Ulcers ?", image: Anxiety },
-    { question: "Common cold ?", image: fear },
-    { question: "Sinusitis ?", image: confusion },
-    { question: "Sore throats ?", image: Depression },
-    { question: "Ear Infections ?", image: Depression },
-    { question: "Hay Fever ?", image: Depression },
-    { question: "Loss of smell ?", image: Depression },
-    { question: "Cough ?", image: Depression },
-    { category: "Mind and Brain ", image: brain },
-    { question: "Hyperactivity ?", image: Depression },
+    {
+      question: "Increased sweating, ear wax, oily skin ",
+      image: Irritablity,
+      questionNumber: 1,
+    },
+    { question: "Skin rashes ?", image: Nervousness, questionNumber: 2 },
+    {
+      question: "Brown spots on hands and face ?",
+      image: Moodswings,
+      questionNumber: 3,
+    },
+    { question: "Boils ?", image: frequentcrying, questionNumber: 4 },
+    {
+      question: "Skin tags (small hanging warts) ?",
+      image: Aggressive,
+      questionNumber: 5,
+    },
+    { question: "Acne ?", image: Anxiety, questionNumber: 6 },
+    { question: "Eczema ?", image: fear, questionNumber: 7 },
+    { question: "Fever Blisters ?", image: confusion, questionNumber: 8 },
+    { question: "Warts ?", image: Depression, questionNumber: 9 },
+
+    { category: " ", image: earNose },
+
+    { question: "Increase salivation ?", image: Aggressive, questionNumber: 1 },
+    { question: "Mouth Ulcers ?", image: Anxiety, questionNumber: 2 },
+    { question: "Common cold ?", image: fear, questionNumber: 3 },
+    { question: "Sinusitis ?", image: confusion, questionNumber: 4 },
+    { question: "Sore throats ?", image: Depression, questionNumber: 5 },
+    { question: "Ear Infections ?", image: Depression, questionNumber: 6 },
+    { question: "Hay Fever ?", image: Depression, questionNumber: 7 },
+    { question: "Loss of smell ?", image: Depression, questionNumber: 8 },
+    { question: "Cough ?", image: Depression, questionNumber: 9 },
+    { category: " ", image: brain },
+    { question: "Hyperactivity ?", image: Depression, questionNumber: 1 },
     {
       question: "Stammering when speaking or problem finding words ?",
       image: Depression,
+      questionNumber: 2,
     },
-    { question: "Difficulty in concentration ?", image: Depression },
-    { question: "Difficulty in making decisions ?", image: Depression },
-    { question: "Headache ?", image: Depression },
-    { question: "Poor memory ?", image: Depression },
-    { question: "Poor coordination ?", image: Depression },
-    { question: "Compulsive behavior ?", image: Depression },
-    { question: "Sleep disturbance ?", image: Depression },
-    { question: "Memory loss ?", image: Depression },
-    { category: "Digestive System", image: digest },
-    { question: "Loose stools ?", image: Depression },
-    { question: "Diarrhea ?", image: Depression },
-    { question: "Heartburn ?", image: Depression },
-    { question: "Constipation ?", image: Depression },
-    { question: "Bloating ?", image: Depression },
-    { question: "Abdominal pain ?", image: Depression },
-    { question: "Intolerance to certain foods ?", image: Depression },
-    { question: "Nausea or vomiting ?", image: Depression },
-    { question: "Severe diarrhea with blood or mucous ?", image: Depression },
-    { category: "Kidney", image: kidney },
+    {
+      question: "Difficulty in concentration ?",
+      image: Depression,
+      questionNumber: 3,
+    },
+    {
+      question: "Difficulty in making decisions ?",
+      image: Depression,
+      questionNumber: 4,
+    },
+    { question: "Headache ?", image: Depression, questionNumber: 5 },
+    { question: "Poor memory ?", image: Depression, questionNumber: 6 },
+    { question: "Poor coordination ?", image: Depression, questionNumber: 7 },
+    { question: "Compulsive behavior ?", image: Depression, questionNumber: 8 },
+    { question: "Sleep disturbance ?", image: Depression, questionNumber: 9 },
+    { question: "Memory loss ?", image: Depression, questionNumber: 10 },
+
+    { category: "  ", image: digest },
+
+    { question: "Loose stools ?", image: Depression, questionNumber: 1 },
+    { question: "Diarrhea ?", image: Depression, questionNumber: 2 },
+    { question: "Heartburn ?", image: Depression, questionNumber: 3 },
+    { question: "Constipation ?", image: Depression, questionNumber: 4 },
+    { question: "Bloating ?", image: Depression, questionNumber: 5 },
+    { question: "Abdominal pain ?", image: Depression, questionNumber: 6 },
+    {
+      question: "Intolerance to certain foods ?",
+      image: Depression,
+      questionNumber: 7,
+    },
+    { question: "Nausea or vomiting ?", image: Depression, questionNumber: 8 },
+    {
+      question: "Severe diarrhea with blood or mucous ?",
+      image: Depression,
+      questionNumber: 9,
+    },
+    { category: " ", image: kidney },
     {
       question: "Increase in urination frequency and amount ?",
       image: Depression,
+      questionNumber: 1,
     },
     {
       question: "Needing to get uo in the night to pass urine ?",
       image: Depression,
+      questionNumber: 2,
     },
-    { question: "Urinary tract infections and cystitis ?", image: Depression },
-    { question: "Kidney stones ?", image: Depression },
-    { question: "Blood in urine ?", image: Depression },
-    { category: "Joints and Muscles ", image: joint },
-    { question: "Fleeting muscle aches or joints aches ?", image: Depression },
+    {
+      question: "Urinary tract infections and cystitis ?",
+      image: Depression,
+      questionNumber: 3,
+    },
+    { question: "Kidney stones ?", image: Depression, questionNumber: 4 },
+    { question: "Blood in urine ?", image: Depression, questionNumber: 5 },
+    { category: " ", image: joint },
+    {
+      question: "Fleeting muscle aches or joints aches ?",
+      image: Depression,
+      questionNumber: 1,
+    },
     {
       question:
         "Tendinitis (e.g., tennis elbow, golfer's elbow, achilles tendinitis) ?",
       image: Depression,
+      questionNumber: 2,
     },
-    { question: "Gout ?", image: Depression },
-    { question: "Arthritis ?", image: Depression },
-    { question: "Fibromyalgia ?", image: Depression },
-    { category: "Metabolism", image: meta },
-    { question: "Feeling of coldness ?", image: Depression },
-    { question: "Hypoglycemia ?", image: Depression },
-    { question: "Craving certain foods ?", image: Depression },
-    { question: "Water retention ?", image: Depression },
-    { question: "Obesity ?", image: Depression },
-    { question: "Cellulite ?", image: Depression },
+    { question: "Gout ?", image: Depression, questionNumber: 3 },
+    { question: "Arthritis ?", image: Depression, questionNumber: 4 },
+    { question: "Fibromyalgia ?", image: Depression, questionNumber: 5 },
+    { category: " ", image: meta },
+    { question: "Feeling of coldness ?", image: Depression, questionNumber: 1 },
+    { question: "Hypoglycemia ?", image: Depression, questionNumber: 2 },
+    {
+      question: "Craving certain foods ?",
+      image: Depression,
+      questionNumber: 3,
+    },
+    { question: "Water retention ?", image: Depression, questionNumber: 4 },
+    { question: "Obesity ?", image: Depression, questionNumber: 5 },
+    { question: "Cellulite ?", image: Depression, questionNumber: 6 },
   ];
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [totalPoints, setTotalPoints] = useState(0);
@@ -337,7 +389,7 @@ function CallengeQuestions() {
 
   const currentQuestion = emotion[currentQuestionIndex]?.question;
   const currentImage = emotion[currentQuestionIndex]?.image;
-
+  const questionNumber = emotion[currentQuestionIndex]?.questionNumber;
   const [slide, setSlide] = useState(true);
   useEffect(() => {
     setSlide(false);
@@ -367,6 +419,12 @@ function CallengeQuestions() {
         <Box sx={style.bg}>
           <Box sx={style.textBoxImg}>
             <Container sx={style.container}>
+              <Typography
+                sx={[style.mainHead, { textAlign: "center", marginBottom: 3 }]}
+              >
+                Personal Information
+              </Typography>
+
               <Slide direction="left" in={slide} mountOnEnter unmountOnExit>
                 <Grid
                   container
@@ -395,7 +453,7 @@ function CallengeQuestions() {
                             sx={{ width: "100%", marginY: "1rem" }}
                           >
                             <DatePicker
-                              label="Controlled picker"
+                              label="Test Date"
                               sx={{ width: "100%" }}
                             />
                           </LocalizationProvider>
@@ -413,11 +471,15 @@ function CallengeQuestions() {
                             variant="outlined"
                             sx={{ width: "100%", marginY: "1rem" }}
                           />
-                          <TextField
-                            label="DOB"
-                            variant="outlined"
-                            sx={{ width: "100%" }}
-                          />
+                          <LocalizationProvider
+                            dateAdapter={AdapterDayjs}
+                            sx={{ width: "100%", marginY: "1rem" }}
+                          >
+                            <DatePicker
+                              label="Date Of Birth"
+                              sx={{ width: "100%" }}
+                            />
+                          </LocalizationProvider>
                         </Box>
                       </Grid>
                       <Button sx={style.formButton} onClick={handleFormSubmit}>
@@ -435,7 +497,7 @@ function CallengeQuestions() {
       {pageLoad ? (
         <Box sx={style.bg}>
           <Box sx={style.textBox}>
-            <Typography sx={style.mainHead}>Emotional </Typography>
+            <Typography sx={style.mainHead}>Detox </Typography>
             <Typography sx={style.mainSlogan}>
               Callenge Test Questionniare
             </Typography>
@@ -451,7 +513,7 @@ function CallengeQuestions() {
               >
                 <Grid item lg={7}>
                   <Typography variant="h6" sx={style.question}>
-                    QUESTION : {currentQuestionIndex}
+                    QUESTION : {questionNumber}
                   </Typography>
                   <Typography variant="h5" sx={style.question}>
                     {currentQuestion}

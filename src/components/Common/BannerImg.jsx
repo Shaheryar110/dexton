@@ -145,6 +145,8 @@ function BannerImg({ img, category, func, slide }) {
       paddingTop: "4rem",
       fontSize: "3rem",
       fontFamily: "Roboto Slab, sans-serif",
+      maxWidth: "70%",
+      textAlign: "center",
     },
     btn: {
       backgroundColor: "white",
