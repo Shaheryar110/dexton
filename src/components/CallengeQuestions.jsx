@@ -23,7 +23,7 @@ import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 import BannerImg from "./Common/BannerImg";
 import skin from "../assets/image/skin.jpg";
 import earNose from "../assets/image/ear.png";
-import brain from "../assets/image/Brain.png";
+import brain from "../assets/image/brain.png";
 import digest from "../assets/image/digestive.png";
 import kidney from "../assets/image/kidney.png";
 import joint from "../assets/image/joints.png";
