@@ -22,11 +22,11 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 import BannerImg from "./Common/BannerImg";
 import skin from "../assets/image/skin.jpg";
-import earNose from "../assets/image/earNose.jpg";
-import brain from "../assets/image/Brain.jpg";
-import digest from "../assets/image/digest.jpg";
-import kidney from "../assets/image/kidney.jpg";
-import joint from "../assets/image/joint.jpg";
+import earNose from "../assets/image/ear.png";
+import brain from "../assets/image/Brain.png";
+import digest from "../assets/image/digestive.png";
+import kidney from "../assets/image/kidney.png";
+import joint from "../assets/image/joints.png";
 import meta from "../assets/image/meta.jpg";
 
 function CallengeQuestions() {
@@ -570,11 +570,11 @@ function CallengeQuestions() {
                       width: "100%",
                       display: "flex",
                       alignItems: "center",
-                      justifyContent: "start",
+                      justifyContent: "center",
                     }}
                   >
                     <Image
-                      sx={{ height: "100%", width: "100%" }}
+                      sx={{ height: "400px", width: "100%" }}
                       src={currentImage}
                       alt="oops"
                     />
