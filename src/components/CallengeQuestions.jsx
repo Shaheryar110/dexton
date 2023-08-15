@@ -120,7 +120,7 @@ function CallengeQuestions() {
     },
     mainHead: {
       color: "white",
-      fontSize: "5rem",
+      fontSize: "3rem",
       fontWeight: 900,
     },
     textBox: {
