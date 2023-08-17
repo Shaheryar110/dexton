@@ -1,6 +1,6 @@
-import { Box, Button, Typography, Container, Grid } from "@mui/material";
+import { Box, Button, Typography, Container, Grid, Slide } from "@mui/material";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import homeImg from "../assets/image/home.jpg";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import Image from "next/image";
@@ -201,55 +201,65 @@ function HomePage() {
       paddingLeft: "2rem",
     },
   };
+
+  const [slide, setSlide] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setSlide(true);
+    }, 500);
+  }, []);
   return (
     <>
       <Box sx={style.bg}>
         <Box sx={style.textBoxImg}>
-          <Container sx={style.container1}>
-            <Grid
-              container
-              sx={[
-                style.Box1,
-                { boxShadow: "7px 6px 13px -4px rgba(0,0,0,0.75)" },
-              ]}
-            >
-              <Grid item lg={12} sx={{ position: "relative" }}>
-                <Box
-                  sx={{
-                    width: "100%",
-                    height: "100%",
-                  }}
-                >
-                  <Image
-                    src={back}
-                    style={{
+          <Slide direction="left" in={slide} mountOnEnter unmountOnExit>
+            <Container sx={style.container1}>
+              <Grid
+                container
+                sx={[
+                  style.Box1,
+                  { boxShadow: "7px 6px 13px -4px rgba(0,0,0,0.75)" },
+                ]}
+              >
+                <Grid item lg={12} sx={{ position: "relative" }}>
+                  <Box
+                    sx={{
                       width: "100%",
                       height: "100%",
                     }}
-                    alt="oops"
-                  />
-                </Box>
-                <Box sx={style.content}>
-                  <Typography variant="h4" sx={style.heading}></Typography>
-                  <Link
-                    href="callenge-question"
-                    style={{ textDecoration: "none" }}
                   >
-                    <Button variant="outlined" sx={style.btn}>
-                      LETS STARTED
-                      <TrendingFlatIcon
-                        sx={{
-                          color: "white",
-                          backgroundColor: "#082958",
-                          borderRadius: "50px",
-                        }}
-                      />
-                    </Button>
-                  </Link>
-                </Box>
+                    <Image
+                      src={back}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
+                      alt="oops"
+                    />
+                  </Box>
+                  <Box sx={style.content}>
+                    <Typography variant="h4" sx={style.heading}></Typography>
+                    <Link
+                      href="callenge-question"
+                      style={{ textDecoration: "none" }}
+                      onClick={() => setSlide(false)}
+                    >
+                      <Button variant="outlined" sx={style.btn}>
+                        LETS STARTED
+                        <TrendingFlatIcon
+                          sx={{
+                            color: "white",
+                            backgroundColor: "#082958",
+                            borderRadius: "50px",
+                          }}
+                        />
+                      </Button>
+                    </Link>
+                  </Box>
+                </Grid>
               </Grid>
-            </Grid>
-          </Container>
+            </Container>
+          </Slide>
         </Box>
       </Box>
     </>

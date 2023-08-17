@@ -460,7 +460,11 @@ function CallengeQuestions() {
 
   const [form, setForm] = useState(false);
   const handleFormSubmit = () => {
-    setForm(true);
+    setSlide(false);
+    setTimeout(() => {
+      setForm(true);
+      setSlide(true);
+    }, 500);
   };
   const [pageLoad, setPageLoad] = useState(false);
   const stateChaneg = () => {
