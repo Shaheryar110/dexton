@@ -2,6 +2,13 @@ import { Container, Box, Grid, Typography, Slide, Button } from "@mui/material";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
+import { Patua_One } from "next/font/google";
+
+const patua = Patua_One({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 import bg from "../assets/image/bg.jpg";
 import Aggressive from "../assets/image/Aggressive.png";
 import Anxiety from "../assets/image/Anxiety.png";
@@ -62,26 +69,29 @@ import digestive4 from "../assets/image/digestive4.png";
 import digestive5 from "../assets/image/digestive5.jpg";
 import digestive6 from "../assets/image/digestive6.jpg";
 import digestive7 from "../assets/image/digestive7.png";
-import digestive8 from "../assets/image/digestive8.png";
+import digestive8 from "../assets/image/digestive8s.png";
 import digestive9 from "../assets/image/digestive9.png";
 import kidney from "../assets/image/kidney.png";
-import kidne1 from "../assets/image/kidney1.png";
+import kidne1 from "../assets/image/Kidney1.png";
 import kidne2 from "../assets/image/kidney2.png";
 import kidne3 from "../assets/image/kidney3.png";
 import kidne4 from "../assets/image/kidney4.png";
 import kidne5 from "../assets/image/kidney5.png";
 import joint from "../assets/image/joints.png";
-import joint1 from "../assets/image/joint1.png";
-import joint2 from "../assets/image/joint2.png";
-import joint3 from "../assets/image/joint3.png";
-import joint4 from "../assets/image/joint4.png";
-import joint5 from "../assets/image/joint5.png";
-import joint6 from "../assets/image/joint6.png";
-import meta from "../assets/image/meta.jpg";
-import meta1 from "../assets/image/meta1.png";
-import meta2 from "../assets/image/meta2.png";
-import meta3 from "../assets/image/meta3.png";
-import meta4 from "../assets/image/meta4.png";
+
+import meta from "../assets/image/metacat.png";
+import meta0 from "../assets/image/metabol1.png";
+import meta1 from "../assets/image/metabol2.png";
+import meta2 from "../assets/image/metabol3.png";
+import meta3 from "../assets/image/metabol4.png";
+import meta4 from "../assets/image/metabol5.png";
+import meta5 from "../assets/image/tang.png";
+
+import joint1 from "../assets/image/meta0.png";
+import joint2 from "../assets/image/meta1.png";
+import joint3 from "../assets/image/meta2.png";
+import joint4 from "../assets/image/meta3.png";
+import joint5 from "../assets/image/meta4.png";
 
 function CallengeQuestions() {
   const style = {
@@ -406,16 +416,16 @@ function CallengeQuestions() {
     { question: "Arthritis ?", image: joint4, questionNumber: 4 },
     { question: "Fibromyalgia ?", image: joint5, questionNumber: 5 },
     { category: " ", image: meta },
-    { question: "Feeling of coldness ?", image: meta1, questionNumber: 1 },
-    { question: "Hypoglycemia ?", image: meta2, questionNumber: 2 },
+    { question: "Feeling of coldness ?", image: meta0, questionNumber: 1 },
+    { question: "Hypoglycemia ?", image: meta1, questionNumber: 2 },
     {
       question: "Craving certain foods ?",
-      image: meta3,
+      image: meta2,
       questionNumber: 3,
     },
-    { question: "Water retention ?", image: meta4, questionNumber: 4 },
-    { question: "Obesity ?", image: Depression, questionNumber: 5 },
-    { question: "Cellulite ?", image: Depression, questionNumber: 6 },
+    { question: "Water retention ?", image: meta3, questionNumber: 4 },
+    { question: "Obesity ?", image: meta4, questionNumber: 5 },
+    { question: "Cellulite ?", image: meta5, questionNumber: 6 },
   ];
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [totalPoints, setTotalPoints] = useState(0);
@@ -555,8 +565,10 @@ function CallengeQuestions() {
       {pageLoad ? (
         <Box sx={style.bg}>
           <Box sx={style.textBox}>
-            <Typography sx={style.mainHead}>Detox </Typography>
-            <Typography sx={style.mainSlogan}>
+            <Typography sx={style.mainHead} className={patua.className}>
+              Detox{" "}
+            </Typography>
+            <Typography sx={style.mainSlogan} className={patua.className}>
               Callenge Test Questionniare
             </Typography>
           </Box>
@@ -632,7 +644,7 @@ function CallengeQuestions() {
                     }}
                   >
                     <Image
-                      sx={{ height: "100%", width: "100%" }}
+                      style={{ height: "70%", width: "70%" }}
                       src={currentImage}
                       alt="oops"
                     />
