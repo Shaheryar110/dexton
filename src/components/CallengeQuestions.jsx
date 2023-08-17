@@ -35,8 +35,8 @@ import skin3 from "../assets/image/skin3.jpg";
 import skin4 from "../assets/image/skin4.png";
 import skin5 from "../assets/image/skin5.jpg";
 import skin6 from "../assets/image/skin6.png";
-import skin7 from "../assets/image/skin7.jpg";
-import skin8 from "../assets/image/skin8.jpg";
+import skin7 from "../assets/image/skin7.png";
+import skin8 from "../assets/image/skin8.png";
 import skin9 from "../assets/image/skin9.png";
 import earNose from "../assets/image/ear.png";
 import ear1 from "../assets/image/ear1.png";
@@ -80,12 +80,12 @@ import kidne5 from "../assets/image/kidney5.png";
 import joint from "../assets/image/joints.png";
 
 import meta from "../assets/image/metacat.png";
-import meta0 from "../assets/image/metabol1.png";
-import meta1 from "../assets/image/metabol2.png";
-import meta2 from "../assets/image/metabol3.png";
-import meta3 from "../assets/image/metabol4.png";
-import meta4 from "../assets/image/metabol5.png";
-import meta5 from "../assets/image/tang.png";
+import meta1 from "../assets/image/metabol1.png";
+import meta2 from "../assets/image/metabol2.png";
+import meta3 from "../assets/image/metabol3.png";
+import meta4 from "../assets/image/metabol4.png";
+import meta5 from "../assets/image/metabol5.png";
+import meta6 from "../assets/image/meta6.png";
 
 import joint1 from "../assets/image/meta0.png";
 import joint2 from "../assets/image/meta1.png";
@@ -416,16 +416,16 @@ function CallengeQuestions() {
     { question: "Arthritis ?", image: joint4, questionNumber: 4 },
     { question: "Fibromyalgia ?", image: joint5, questionNumber: 5 },
     { category: " ", image: meta },
-    { question: "Feeling of coldness ?", image: meta0, questionNumber: 1 },
-    { question: "Hypoglycemia ?", image: meta1, questionNumber: 2 },
+    { question: "Feeling of coldness ?", image: meta1, questionNumber: 1 },
+    { question: "Hypoglycemia ?", image: meta2, questionNumber: 2 },
     {
       question: "Craving certain foods ?",
-      image: meta2,
+      image: meta3,
       questionNumber: 3,
     },
-    { question: "Water retention ?", image: meta3, questionNumber: 4 },
-    { question: "Obesity ?", image: meta4, questionNumber: 5 },
-    { question: "Cellulite ?", image: meta5, questionNumber: 6 },
+    { question: "Water retention ?", image: meta4, questionNumber: 4 },
+    { question: "Obesity ?", image: meta5, questionNumber: 5 },
+    { question: "Cellulite ?", image: meta6, questionNumber: 6 },
   ];
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [totalPoints, setTotalPoints] = useState(0);
