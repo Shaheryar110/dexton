@@ -88,10 +88,10 @@ import meta5 from "../assets/image/metabol5.png";
 import meta6 from "../assets/image/meta6.png";
 
 import joint1 from "../assets/image/meta0.png";
-import joint2 from "../assets/image/meta1.png";
-import joint3 from "../assets/image/meta2.png";
-import joint4 from "../assets/image/meta3.png";
-import joint5 from "../assets/image/meta4.png";
+import joint2 from "../assets/image/joint2.png";
+import joint3 from "../assets/image/joint3.png";
+import joint4 from "../assets/image/joint4.png";
+import joint5 from "../assets/image/joint5.png";
 
 function CallengeQuestions() {
   const style = {
