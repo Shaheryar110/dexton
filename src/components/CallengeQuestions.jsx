@@ -1,7 +1,7 @@
 import { Container, Box, Grid, Typography, Slide, Button } from "@mui/material";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-
+import { useRouter } from "next/router";
 import { Patua_One } from "next/font/google";
 
 const patua = Patua_One({
@@ -92,8 +92,10 @@ import joint2 from "../assets/image/joint2.png";
 import joint3 from "../assets/image/joint3.png";
 import joint4 from "../assets/image/joint4.png";
 import joint5 from "../assets/image/joint5.png";
+import Link from "next/link";
 
 function CallengeQuestions() {
+  const router = useRouter();
   const style = {
     container: {
       maxWidth: { xl: "900px" },
@@ -466,6 +468,7 @@ function CallengeQuestions() {
       setPageLoad(true);
     }
     console.log("total", total);
+    setActiveButton("");
   }, [currentQuestionIndex]);
 
   const [form, setForm] = useState(false);
@@ -481,6 +484,12 @@ function CallengeQuestions() {
     setPageLoad(true);
     handleNextQuestion();
   };
+  const handleClick = () => {
+    router.push(`/result/${total}`);
+  };
+  useEffect(() => {
+    console.log(emotion.length, currentQuestionIndex);
+  }, [currentQuestionIndex]);
   return (
     <>
       {!form && (
@@ -750,27 +759,55 @@ function CallengeQuestions() {
                     />
                     PREVIOUS QUESTION
                   </Typography>
-                  <Typography
-                    sx={[
-                      style.pointsAns,
-                      {
-                        backgroundColor: "#082A58",
-                        color: "white",
-                        paddingY: "0.7rem",
-                        paddingX: "1rem",
-                        borderRadius: "10px",
-                        boxShadow: "7px 6px 13px -4px rgba(0,0,0,0.75)",
-                      },
-                    ]}
-                    onClick={handleNextQuestion}
-                  >
-                    NEXT QUESTION
-                    <ArrowRightAltIcon
-                      style={{
-                        fontSize: "2rem",
-                      }}
-                    />
-                  </Typography>
+                  {currentQuestionIndex + 1 < emotion.length ? (
+                    <Typography
+                      sx={[
+                        style.pointsAns,
+                        {
+                          backgroundColor: "#082A58",
+                          color: "white",
+                          paddingY: "0.7rem",
+                          paddingX: "1rem",
+                          borderRadius: "10px",
+                          boxShadow: "7px 6px 13px -4px rgba(0,0,0,0.75)",
+                        },
+                      ]}
+                      onClick={handleNextQuestion}
+                    >
+                      NEXT QUESTION
+                      <ArrowRightAltIcon
+                        style={{
+                          fontSize: "2rem",
+                        }}
+                      />
+                    </Typography>
+                  ) : (
+                    // <Link href="result" style={{ textDecoration: "none" }}>
+                    <>
+                      <Typography
+                        onClick={handleClick}
+                        sx={[
+                          style.pointsAns,
+                          {
+                            backgroundColor: "#082A58",
+                            color: "white",
+                            paddingY: "0.7rem",
+                            paddingX: "1rem",
+                            borderRadius: "10px",
+                            boxShadow: "7px 6px 13px -4px rgba(0,0,0,0.75)",
+                          },
+                        ]}
+                      >
+                        Result
+                        <ArrowRightAltIcon
+                          style={{
+                            fontSize: "2rem",
+                          }}
+                        />
+                      </Typography>
+                    </>
+                    // </Link>
+                  )}
                 </Box>
               </Grid>
             </Slide>
