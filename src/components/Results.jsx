@@ -4,52 +4,18 @@ import bg from "../assets/image/bg.jpg";
 import { Bar } from "react-chartjs-2";
 function Results({ total }) {
   const [slide, setSlide] = useState(true);
-  const options = {
-    indexAxis: "y",
-    elements: {
-      bar: {
-        borderWidth: 2,
-      },
-    },
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "right",
-      },
-      title: {
-        display: true,
-        text: "Chart.js Horizontal Bar Chart",
-      },
-    },
-  };
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
+  const categoriges = [
+    "Emotions",
+    "Skin",
+    "Ear, Nose and Throat",
+    "Mind and Brain",
+    "Digestive System",
+    "Kidney",
+    "Joints and Muscles",
+    " Metabolism",
   ];
-
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: "Dataset 1",
-        data: labels.map(() => 2),
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-      {
-        label: "Dataset 2",
-        data: labels.map(() => 2),
-        borderColor: "rgb(53, 162, 235)",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
-      },
-    ],
-  };
-
+  const subTotal = total?.split(",");
+  const totalScore = total.split(",").map((data) => data);
   return (
     <Box sx={style.bg}>
       <Box sx={style.textBoxImg}>
@@ -68,7 +34,11 @@ function Results({ total }) {
                 { boxShadow: "7px 6px 13px -4px rgba(0,0,0,0.75)" },
               ]}
             >
-              {total}
+              {categoriges.map((item, index) => (
+                <div>
+                  {`${subTotal[index + 1]}  ${item}`} <br />
+                </div>
+              ))}
             </Grid>
           </Slide>
         </Container>

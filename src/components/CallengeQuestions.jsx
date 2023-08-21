@@ -96,6 +96,7 @@ import Link from "next/link";
 
 function CallengeQuestions() {
   const router = useRouter();
+
   const style = {
     container: {
       maxWidth: { xl: "900px" },
@@ -289,6 +290,7 @@ function CallengeQuestions() {
     {
       category: "EMOTION TEST",
       image: emotionImg,
+      categoryName: "Emotion",
     },
     { question: "Irritability ?", image: Irritablity, questionNumber: 1 },
     { question: "Nervousness ?", image: Nervousness, questionNumber: 2 },
@@ -307,6 +309,7 @@ function CallengeQuestions() {
     {
       category: " ",
       image: skin,
+      categoryName: "Skin",
     },
     {
       question: "Increased sweating, ear wax, oily skin ",
@@ -330,7 +333,7 @@ function CallengeQuestions() {
     { question: "Fever Blisters ?", image: skin8, questionNumber: 8 },
     { question: "Warts ?", image: skin9, questionNumber: 9 },
 
-    { category: " ", image: earNose },
+    { category: " ", image: earNose, categoryName: "Ear,Nose" },
 
     { question: "Increase salivation ?", image: ear1, questionNumber: 1 },
     { question: "Mouth Ulcers ?", image: ear2, questionNumber: 2 },
@@ -341,7 +344,7 @@ function CallengeQuestions() {
     { question: "Hay Fever ?", image: ear7, questionNumber: 7 },
     { question: "Loss of smell ?", image: ear8, questionNumber: 8 },
     { question: "Cough ?", image: ear9, questionNumber: 9 },
-    { category: " ", image: brain },
+    { category: " ", image: brain, categoryName: "Brain" },
     { question: "Hyperactivity ?", image: brain1, questionNumber: 1 },
     {
       question: "Stammering when speaking or problem finding words ?",
@@ -365,7 +368,7 @@ function CallengeQuestions() {
     { question: "Sleep disturbance ?", image: brain9, questionNumber: 9 },
     { question: "Memory loss ?", image: brain10, questionNumber: 10 },
 
-    { category: "  ", image: digest },
+    { category: "  ", image: digest, categoryName: "Digestive" },
 
     { question: "Loose stools ?", image: digestive1, questionNumber: 1 },
     { question: "Diarrhea ?", image: digestive2, questionNumber: 2 },
@@ -384,7 +387,7 @@ function CallengeQuestions() {
       image: digestive9,
       questionNumber: 9,
     },
-    { category: " ", image: kidney },
+    { category: " ", image: kidney, categoryName: "Kideny Dieseas" },
     {
       question: "Increase in urination frequency and amount ?",
       image: kidne1,
@@ -402,7 +405,7 @@ function CallengeQuestions() {
     },
     { question: "Kidney stones ?", image: kidne4, questionNumber: 4 },
     { question: "Blood in urine ?", image: kidne5, questionNumber: 5 },
-    { category: " ", image: joint },
+    { category: " ", image: joint, categoryName: "Joint" },
     {
       question: "Fleeting muscle aches or joints aches ?",
       image: joint1,
@@ -417,7 +420,7 @@ function CallengeQuestions() {
     { question: "Gout ?", image: joint3, questionNumber: 3 },
     { question: "Arthritis ?", image: joint4, questionNumber: 4 },
     { question: "Fibromyalgia ?", image: joint5, questionNumber: 5 },
-    { category: " ", image: meta },
+    { category: " ", image: meta, categoryName: "Meta" },
     { question: "Feeling of coldness ?", image: meta1, questionNumber: 1 },
     { question: "Hypoglycemia ?", image: meta2, questionNumber: 2 },
     {
@@ -431,12 +434,11 @@ function CallengeQuestions() {
   ];
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [totalPoints, setTotalPoints] = useState(0);
-
+  const [subTotal, setSubTotal] = useState([]);
   const [activeButton, setActiveButton] = useState(null);
-
+  const [subtotalIndex, setSubTotalIndex] = useState(0);
   const handleAnswerClick = (points) => {
-    setTotalPoints(totalPoints + points);
-    setActiveButton(points);
+    setActiveButton(Number(points));
   };
   const [total, setTotal] = useState(0);
 
@@ -444,7 +446,15 @@ function CallengeQuestions() {
     if (currentQuestionIndex < emotion.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
-    setTotal(total + activeButton);
+    if (emotion[currentQuestionIndex]?.categoryName) {
+      setSubTotalIndex((pre) => pre + 1);
+    } else {
+      let temp = subTotal;
+      temp[subtotalIndex] =
+        Number(temp[subtotalIndex] || 0) + Number(activeButton || 0);
+      setSubTotal(temp);
+    }
+    setTotal(total + Number(activeButton));
   };
   const handlePrevQuestion = () => {
     if (currentQuestionIndex < emotion.length + 1) {
@@ -467,8 +477,8 @@ function CallengeQuestions() {
     } else {
       setPageLoad(true);
     }
-    console.log("total", total);
-    setActiveButton("");
+
+    setActiveButton(null);
   }, [currentQuestionIndex]);
 
   const [form, setForm] = useState(false);
@@ -485,11 +495,12 @@ function CallengeQuestions() {
     handleNextQuestion();
   };
   const handleClick = () => {
-    router.push(`/result/${total}`);
+    router.push(`/result/${subTotal}`);
   };
   useEffect(() => {
-    console.log(emotion.length, currentQuestionIndex);
-  }, [currentQuestionIndex]);
+    console.log(subTotal);
+  }, [subTotal]);
+
   return (
     <>
       {!form && (
