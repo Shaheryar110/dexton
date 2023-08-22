@@ -1,28 +1,69 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Box, Grid, Typography, Slide, Button } from "@mui/material";
 import bg from "../assets/image/bg.jpg";
-import { Bar } from "react-chartjs-2";
 function Results({ total }) {
   const [slide, setSlide] = useState(true);
-  const categoriges = [
-    "Emotions",
-    "Skin",
-    "Ear, Nose and Throat",
-    "Mind and Brain",
-    "Digestive System",
-    "Kidney",
-    "Joints and Muscles",
-    " Metabolism",
-  ];
+
   const subTotal = total?.split(",");
-  const totalScore = total.split(",").map((data) => data);
+  const totalScore = total?.split(",")?.map((data) => Number(data));
+  console.log(totalScore, "totalScore");
+  const categoriges = [
+    {
+      cat: "Emotions",
+      points: `${subTotal[1]}`,
+      percent: (`${subTotal[1]}` / 40) * 100,
+    },
+    {
+      cat: "Skin",
+      points: `${subTotal[2]}`,
+      percent: (`${subTotal[1]}` / 36) * 100,
+    },
+    {
+      cat: "Ear, Nose and Throat",
+      points: `${subTotal[3]}`,
+      percent: (`${subTotal[1]}` / 36) * 100,
+    },
+    {
+      cat: "Mind and Brain",
+      points: `${subTotal[4]}`,
+      percent: (`${subTotal[1]}` / 40) * 100,
+    },
+    {
+      cat: "Digestive System",
+      points: `${subTotal[5]}`,
+      percent: (`${subTotal[1]}` / 36) * 100,
+    },
+    {
+      cat: "Kidney",
+      points: `${subTotal[6]}`,
+      percent: (`${subTotal[1]}` / 20) * 100,
+    },
+    {
+      cat: "Joints and Muscles",
+      points: `${subTotal[7]}`,
+      percent: (`${subTotal[1]}` / 20) * 100,
+    },
+    {
+      cat: " Metabolism",
+      points: `${subTotal[8]}`,
+      percent: (`${subTotal[1]}` / 24) * 100,
+    },
+  ];
+  const [sum, setSum] = useState(0);
+  const calculateSum = () => {
+    const arraySum = totalScore.reduce((acc, num) => acc + num, 0);
+    setSum(arraySum);
+  };
+  const percentageTotal = (sum / 252) * 100;
+  useEffect(() => {
+    calculateSum();
+    console.log(sum);
+  }, [totalScore]);
   return (
     <Box sx={style.bg}>
       <Box sx={style.textBoxImg}>
         <Container sx={style.container}>
-          <Typography
-            sx={[style.mainHead, { textAlign: "center", marginBottom: 3 }]}
-          >
+          <Typography sx={[style.mainHead, { textAlign: "center" }]}>
             Result
           </Typography>
 
@@ -34,11 +75,82 @@ function Results({ total }) {
                 { boxShadow: "7px 6px 13px -4px rgba(0,0,0,0.75)" },
               ]}
             >
-              {categoriges.map((item, index) => (
-                <div>
-                  {`${subTotal[index + 1]}  ${item}`} <br />
-                </div>
+              {categoriges?.map((item, index) => (
+                <>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "Center",
+                      justifyContent: "space-between",
+                      width: "100%",
+                    }}
+                  >
+                    <div key={index} style={{ width: "100%", marginY: "1rem" }}>
+                      <Typography variant="h5" sx={{ fontWeight: 700 }}>
+                        {item.cat}
+                      </Typography>
+                      <br />
+                      <Typography variant="h5">{item.points}</Typography>
+                    </div>
+                    <Box sx={{ width: `${item.percent}%`, height: "100%" }}>
+                      <div
+                        style={{
+                          height: "80px",
+                          width: "100%",
+                          border: "2px solid black",
+                          background:
+                            "linear-gradient(to right, red, yellow, green)",
+                        }}
+                      ></div>
+                    </Box>
+                  </Box>
+                  <hr style={{ width: "100%" }} />
+                </>
               ))}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "Center",
+                  justifyContent: "space-between",
+                  width: "100%",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "Center",
+
+                    width: "100%",
+                  }}
+                >
+                  <Typography
+                    variant="h5"
+                    sx={{ fontWeight: 800, marginTop: "1rem" }}
+                  >
+                    GRAND TOTAL :
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    sx={{ fontWeight: 600, marginTop: "1rem" }}
+                  >
+                    {sum}
+                  </Typography>
+                </Box>
+                <Box sx={{ width: `${percentageTotal}%` }}>
+                  <div
+                    style={{
+                      height: "80px",
+                      width: "100%",
+                      border: "2px solid black",
+                      background:
+                        "linear-gradient(to right, red, yellow, green)",
+                    }}
+                  ></div>
+                </Box>
+              </Box>
             </Grid>
           </Slide>
         </Container>
@@ -58,7 +170,7 @@ const style = {
   },
   bg: {
     width: "100%",
-    height: "100vh",
+    height: "100%",
     backgroundImage: `url(${bg.src})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -97,7 +209,6 @@ const style = {
     marginY: "2rem",
   },
   textBoxImg: {
-    paddingTop: "15rem",
     width: "100%",
     display: "flex",
     flexDirection: "column",
