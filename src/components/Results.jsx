@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Container, Box, Grid, Typography, Slide, Button } from "@mui/material";
 import bg from "../assets/image/bg.jpg";
-function Results({ total }) {
+function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
   const [slide, setSlide] = useState(true);
 
-  const subTotal = total?.split(",");
-  const totalScore = total?.split(",")?.map((data) => Number(data));
+  const subTotal = typeof total === "string" ? total.split(",") : [];
+  const totalScore =
+    typeof total === "string"
+      ? total.split(",").map((data) => Number(data))
+      : [];
   console.log(totalScore, "totalScore");
   const categoriges = [
     {

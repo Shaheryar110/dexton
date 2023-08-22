@@ -4,8 +4,7 @@ import { useRouter } from "next/router";
 function result() {
   const router = useRouter();
   const { query } = router;
-  console.log(query);
-  return <Results total={query.total} />;
+  return <Results total={query.total || [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]} />;
 }
 
 export default result;

@@ -495,7 +495,7 @@ function CallengeQuestions() {
     handleNextQuestion();
   };
   const handleClick = () => {
-    router.push(`/result/${subTotal}`);
+    router.push(`/result/${subTotal || [0, 0, 0, 0, 0, 0, 0, 0, 0]}`);
   };
   useEffect(() => {
     console.log(subTotal);
