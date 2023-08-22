@@ -529,16 +529,19 @@ function CallengeQuestions() {
                             label="First Name"
                             variant="outlined"
                             sx={{ width: "100%", marginY: "1rem" }}
+                            required
                           />
 
                           <TextField
                             label="Email"
                             variant="outlined"
                             sx={{ width: "100%", marginY: "1rem" }}
+                            required
                           />
                           <LocalizationProvider
                             dateAdapter={AdapterDayjs}
                             sx={{ width: "100%", marginY: "1rem" }}
+                            required
                           >
                             <DatePicker
                               label="Test Date"
@@ -553,11 +556,13 @@ function CallengeQuestions() {
                             label="Last Name"
                             variant="outlined"
                             sx={{ width: "100%", marginY: "1rem" }}
+                            required
                           />
                           <TextField
                             label="Phone"
                             variant="outlined"
                             sx={{ width: "100%", marginY: "1rem" }}
+                            required
                           />
                           <LocalizationProvider
                             dateAdapter={AdapterDayjs}
@@ -569,6 +574,22 @@ function CallengeQuestions() {
                             />
                           </LocalizationProvider>
                         </Box>
+                      </Grid>
+                      <Grid item lg={6}>
+                        <TextField
+                          label="Enter Height Between 15 to 100"
+                          variant="outlined"
+                          sx={{ width: "100%", marginY: "1rem" }}
+                          required
+                        />
+                      </Grid>
+                      <Grid item lg={6}>
+                        <TextField
+                          label="Enter Weight in US LBS"
+                          variant="outlined"
+                          sx={{ width: "100%", marginY: "1rem" }}
+                          required
+                        />
                       </Grid>
                       <Button sx={style.formButton} onClick={handleFormSubmit}>
                         SUBMIT
