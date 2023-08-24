@@ -654,7 +654,7 @@ function CallengeQuestions() {
                       </Grid>
                       <Grid item lg={6}></Grid>
                       {selectedValue == "US" && (
-                        <Grid item lg={6}>
+                        <Grid item lg={8}>
                           <Box
                             sx={{
                               width: "100%",
@@ -690,42 +690,52 @@ function CallengeQuestions() {
                       )}
 
                       {selectedValue == "Metric" && (
-                        <Grid item lg={6}>
-                          <TextField
-                            label="Enter Height Between 15 to 100"
-                            variant="outlined"
-                            sx={{ width: "100%", marginY: "1rem" }}
-                            value={height}
-                            onChange={heightNameHandler}
-                          />
-
-                          <TextField
-                            label="Enter Weight in US LBS"
-                            variant="outlined"
-                            sx={{ width: "100%", marginY: "1rem" }}
-                            value={weight}
-                            onChange={weightNameHandler}
-                          />
+                        <Grid item lg={8}>
+                          <Box
+                            sx={{
+                              display: "flex",
+                              flexDirection: "row",
+                              alignItems: "center",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <Typography
+                              sx={{ fontWeight: 600, paddingX: "1rem" }}
+                            >
+                              Height
+                            </Typography>
+                            <TextField
+                              label="Centimenter"
+                              variant="outlined"
+                              sx={{ width: "100%", marginY: "1rem" }}
+                              value={height}
+                              onChange={heightNameHandler}
+                            />
+                          </Box>
+                          <Box
+                            sx={{
+                              display: "flex",
+                              flexDirection: "row",
+                              alignItems: "center",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <Typography
+                              sx={{ fontWeight: 600, paddingX: "1rem" }}
+                            >
+                              Weight
+                            </Typography>
+                            <TextField
+                              label="Kilogram"
+                              variant="outlined"
+                              sx={{ width: "100%", marginY: "1rem" }}
+                              value={weight}
+                              onChange={weightNameHandler}
+                            />
+                          </Box>
                         </Grid>
                       )}
-                      {/* <Grid item lg={6}>
-                        <TextField
-                          label="Enter Height Between 15 to 100"
-                          variant="outlined"
-                          sx={{ width: "100%", marginY: "1rem" }}
-                          value={height}
-                          onChange={heightNameHandler}
-                        />
-                      </Grid>
-                      <Grid item lg={6}>
-                        <TextField
-                          label="Enter Weight in US LBS"
-                          variant="outlined"
-                          sx={{ width: "100%", marginY: "1rem" }}
-                          value={weight}
-                          onChange={weightNameHandler}
-                        />
-                      </Grid> */}
+
                       <Button sx={style.formButton} onClick={formSubmit}>
                         SUBMIT
                       </Button>
