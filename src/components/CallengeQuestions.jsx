@@ -92,11 +92,29 @@ import joint2 from "../assets/image/joint2.png";
 import joint3 from "../assets/image/joint3.png";
 import joint4 from "../assets/image/joint4.png";
 import joint5 from "../assets/image/joint5.png";
-import Link from "next/link";
+import {
+  FormControl,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function CallengeQuestions() {
   const router = useRouter();
-
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [Validemail, setValidEmail] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
+  const [selectedValue, setSelectedValue] = useState("US");
+  const handleRadioChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
   const style = {
     container: {
       maxWidth: { xl: "900px" },
@@ -146,7 +164,7 @@ function CallengeQuestions() {
       marginY: "2rem",
     },
     textBoxImg: {
-      paddingTop: "15rem",
+      paddingTop: "5rem",
       width: "100%",
       display: "flex",
       flexDirection: "column",
@@ -482,6 +500,13 @@ function CallengeQuestions() {
   }, [currentQuestionIndex]);
 
   const [form, setForm] = useState(false);
+  const formSubmit = () => {
+    if (firstName && lastName && email && phone) {
+      handleFormSubmit();
+    } else {
+      toast.error("Invalid or Empty Feilds");
+    }
+  };
   const handleFormSubmit = () => {
     setSlide(false);
     setTimeout(() => {
@@ -495,11 +520,33 @@ function CallengeQuestions() {
     handleNextQuestion();
   };
   const handleClick = () => {
+    handleNextQuestion();
     router.push(`/result/${subTotal || [0, 0, 0, 0, 0, 0, 0, 0, 0]}`);
   };
   useEffect(() => {
     console.log(subTotal);
   }, [subTotal]);
+  const firstNameHandler = (e) => {
+    setFirstName(e.target.value);
+  };
+  const lastNameHandler = (e) => {
+    setLastName(e.target.value);
+  };
+  const emailNameHandler = (e) => {
+    const email = e.target.value;
+    setEmail(email);
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    setValidEmail(emailRegex.test(email));
+  };
+  const phoneNameHandler = (e) => {
+    setPhone(e.target.value);
+  };
+  const heightNameHandler = (e) => {
+    setHeight(e.target.value);
+  };
+  const weightNameHandler = (e) => {
+    setWeight(e.target.value);
+  };
 
   return (
     <>
@@ -529,14 +576,16 @@ function CallengeQuestions() {
                             label="First Name"
                             variant="outlined"
                             sx={{ width: "100%", marginY: "1rem" }}
-                            required
+                            value={firstName}
+                            onChange={firstNameHandler}
                           />
 
                           <TextField
                             label="Email"
                             variant="outlined"
                             sx={{ width: "100%", marginY: "1rem" }}
-                            required
+                            value={email}
+                            onChange={emailNameHandler}
                           />
                           <LocalizationProvider
                             dateAdapter={AdapterDayjs}
@@ -556,13 +605,15 @@ function CallengeQuestions() {
                             label="Last Name"
                             variant="outlined"
                             sx={{ width: "100%", marginY: "1rem" }}
-                            required
+                            value={lastName}
+                            onChange={lastNameHandler}
                           />
                           <TextField
                             label="Phone"
                             variant="outlined"
                             sx={{ width: "100%", marginY: "1rem" }}
-                            required
+                            value={phone}
+                            onChange={phoneNameHandler}
                           />
                           <LocalizationProvider
                             dateAdapter={AdapterDayjs}
@@ -576,11 +627,94 @@ function CallengeQuestions() {
                         </Box>
                       </Grid>
                       <Grid item lg={6}>
+                        <FormControl component="fieldset">
+                          <RadioGroup
+                            aria-label="radio-group"
+                            name="radio-group"
+                            value={selectedValue}
+                            onChange={handleRadioChange}
+                            sx={{
+                              display: "flex",
+                              flexDirection: "row",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <FormControlLabel
+                              value="US"
+                              control={<Radio />}
+                              label="U.S.(Imperial)"
+                            />
+                            <FormControlLabel
+                              value="Metric"
+                              control={<Radio />}
+                              label="Metric"
+                            />
+                          </RadioGroup>
+                        </FormControl>
+                      </Grid>
+                      <Grid item lg={6}></Grid>
+                      {selectedValue == "US" && (
+                        <Grid item lg={6}>
+                          <Box
+                            sx={{
+                              width: "100%",
+                              display: "flex",
+                              flexDirection: "row",
+                              gap: "1rem",
+                            }}
+                          >
+                            <TextField
+                              label="Feet"
+                              variant="outlined"
+                              sx={{ width: "100%", marginY: "1rem" }}
+                              value={height}
+                              onChange={heightNameHandler}
+                            />
+
+                            <TextField
+                              label="Inches"
+                              variant="outlined"
+                              sx={{ width: "100%", marginY: "1rem" }}
+                              value={weight}
+                              onChange={weightNameHandler}
+                            />
+                          </Box>
+                          <TextField
+                            label="Pounds"
+                            variant="outlined"
+                            sx={{ width: "100%", marginY: "1rem" }}
+                            value={height}
+                            onChange={heightNameHandler}
+                          />
+                        </Grid>
+                      )}
+
+                      {selectedValue == "Metric" && (
+                        <Grid item lg={6}>
+                          <TextField
+                            label="Enter Height Between 15 to 100"
+                            variant="outlined"
+                            sx={{ width: "100%", marginY: "1rem" }}
+                            value={height}
+                            onChange={heightNameHandler}
+                          />
+
+                          <TextField
+                            label="Enter Weight in US LBS"
+                            variant="outlined"
+                            sx={{ width: "100%", marginY: "1rem" }}
+                            value={weight}
+                            onChange={weightNameHandler}
+                          />
+                        </Grid>
+                      )}
+                      {/* <Grid item lg={6}>
                         <TextField
                           label="Enter Height Between 15 to 100"
                           variant="outlined"
                           sx={{ width: "100%", marginY: "1rem" }}
-                          required
+                          value={height}
+                          onChange={heightNameHandler}
                         />
                       </Grid>
                       <Grid item lg={6}>
@@ -588,16 +722,18 @@ function CallengeQuestions() {
                           label="Enter Weight in US LBS"
                           variant="outlined"
                           sx={{ width: "100%", marginY: "1rem" }}
-                          required
+                          value={weight}
+                          onChange={weightNameHandler}
                         />
-                      </Grid>
-                      <Button sx={style.formButton} onClick={handleFormSubmit}>
+                      </Grid> */}
+                      <Button sx={style.formButton} onClick={formSubmit}>
                         SUBMIT
                       </Button>
                     </Grid>
                   </Grid>
                 </Grid>
               </Slide>
+              <ToastContainer />
             </Container>
           </Box>
         </Box>

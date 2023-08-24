@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Box, Grid, Typography, Slide, Button } from "@mui/material";
 import bg from "../assets/image/bg.jpg";
+import EjectIcon from "@mui/icons-material/Eject";
 function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
   const [slide, setSlide] = useState(true);
 
@@ -19,37 +20,37 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
     {
       cat: "Skin",
       points: `${subTotal[2]}`,
-      percent: (`${subTotal[1]}` / 36) * 100,
+      percent: (`${subTotal[2]}` / 36) * 100,
     },
     {
       cat: "Ear, Nose and Throat",
       points: `${subTotal[3]}`,
-      percent: (`${subTotal[1]}` / 36) * 100,
+      percent: (`${subTotal[3]}` / 36) * 100,
     },
     {
       cat: "Mind and Brain",
       points: `${subTotal[4]}`,
-      percent: (`${subTotal[1]}` / 40) * 100,
+      percent: (`${subTotal[4]}` / 40) * 100,
     },
     {
       cat: "Digestive System",
       points: `${subTotal[5]}`,
-      percent: (`${subTotal[1]}` / 36) * 100,
+      percent: (`${subTotal[5]}` / 36) * 100,
     },
     {
       cat: "Kidney",
       points: `${subTotal[6]}`,
-      percent: (`${subTotal[1]}` / 20) * 100,
+      percent: (`${subTotal[6]}` / 20) * 100,
     },
     {
       cat: "Joints and Muscles",
       points: `${subTotal[7]}`,
-      percent: (`${subTotal[1]}` / 20) * 100,
+      percent: (`${subTotal[7]}` / 20) * 100,
     },
     {
       cat: " Metabolism",
       points: `${subTotal[8]}`,
-      percent: (`${subTotal[1]}` / 24) * 100,
+      percent: (`${subTotal[8]}` / 24) * 100,
     },
   ];
   const [sum, setSum] = useState(0);
@@ -93,13 +94,23 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                       <Typography variant="h5" sx={{ fontWeight: 700 }}>
                         {item.cat}
                       </Typography>
-                      <br />
+
                       <Typography variant="h5">{item.points}</Typography>
                     </div>
-                    <Box sx={{ width: `${item.percent}%`, height: "100%" }}>
+                    <Box
+                      sx={{
+                        width: `${item.percent}%`,
+
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                      }}
+                    >
+                      <Typography variant="h6">{item.percent}%</Typography>
                       <div
                         style={{
-                          height: "80px",
+                          height: "30px",
                           width: "100%",
                           border: "2px solid black",
                           background:
@@ -142,16 +153,75 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                     {sum}
                   </Typography>
                 </Box>
-                <Box sx={{ width: `${percentageTotal}%` }}>
+                <Box
+                  sx={{
+                    width: `${percentageTotal}%`,
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContnent: "center",
+                    gap: "0.5rem",
+                  }}
+                >
+                  <Typography varian="h6">{percentageTotal}%</Typography>
                   <div
                     style={{
-                      height: "80px",
+                      height: "50px",
                       width: "100%",
                       border: "2px solid black",
                       background:
                         "linear-gradient(to right, red, yellow, green)",
                     }}
                   ></div>
+                </Box>
+              </Box>
+
+              <Typography
+                variant="h4"
+                sx={{ fontWeight: 800, textAlign: "center", color: "#072857" }}
+              >
+                TOXICITY :
+              </Typography>
+              <Box
+                sx={{
+                  width: "100%",
+                  marginTop: "0.5rem",
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  paddingX: "0.2rem",
+                }}
+              >
+                <Typography variant="h6">0</Typography>
+                <Typography variant="h6">252</Typography>
+              </Box>
+              <Box sx={{ width: "100%", marginTop: "0.3rem" }}>
+                <div
+                  style={{
+                    height: "50px",
+                    width: "100%",
+                    border: "2px solid black",
+                    background: "linear-gradient(to right, red, yellow, green)",
+                  }}
+                ></div>{" "}
+              </Box>
+              <Box
+                sx={{
+                  position: "relative",
+                  width: "97%",
+                  marginTop: "2.5rem",
+                }}
+              >
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: `${percentageTotal || 0}%`,
+                  }}
+                >
+                  <EjectIcon />
+                  {percentageTotal || 0}%
                 </Box>
               </Box>
             </Grid>
