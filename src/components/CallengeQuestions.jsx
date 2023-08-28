@@ -552,6 +552,12 @@ function CallengeQuestions() {
     <>
       {!form && (
         <Box sx={style.bg}>
+          <Typography
+            variant="h6"
+            sx={{ color: "grey", position: "absolute", top: 20, right: 20 }}
+          >
+            All the rights reserved to Dr. Shlomi Gavish DOM, AP
+          </Typography>
           <Box sx={style.textBoxImg}>
             <Container sx={style.container}>
               <Typography
@@ -756,7 +762,7 @@ function CallengeQuestions() {
               Detox{" "}
             </Typography>
             <Typography sx={style.mainSlogan} className={patua.className}>
-              Callenge Test Questionniare
+              Challenge Test Questionniare
             </Typography>
           </Box>
           <Container sx={style.container}>

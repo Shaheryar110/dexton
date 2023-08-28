@@ -211,6 +211,12 @@ function HomePage() {
   return (
     <>
       <Box sx={style.bg}>
+        <Typography
+          variant="h6"
+          sx={{ color: "grey", position: "absolute", top: 20, right: 20 }}
+        >
+          All the rights reserved to Dr. Shlomi Gavish DOM, AP
+        </Typography>
         <Box sx={style.textBoxImg}>
           <Slide direction="left" in={slide} mountOnEnter unmountOnExit>
             <Container sx={style.container1}>

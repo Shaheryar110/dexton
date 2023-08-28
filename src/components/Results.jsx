@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Container, Box, Grid, Typography, Slide, Button } from "@mui/material";
 import bg from "../assets/image/bg.jpg";
 import EjectIcon from "@mui/icons-material/Eject";
+import dict from "../assets/image/dict.png";
+import dict1 from "../assets/image/dict1.png";
+import dict3 from "../assets/image/dict3.png";
+import Image from "next/image";
+import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
   const [slide, setSlide] = useState(true);
 
@@ -65,10 +70,16 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
   }, [totalScore]);
   return (
     <Box sx={style.bg}>
+      <Typography
+        variant="h6"
+        sx={{ color: "grey", position: "absolute", top: 20, right: 20 }}
+      >
+        All the rights reserved to Dr. Shlomi Gavish DOM, AP
+      </Typography>
       <Box sx={style.textBoxImg}>
         <Container sx={style.container}>
           <Typography sx={[style.mainHead, { textAlign: "center" }]}>
-            Result
+            Final Results
           </Typography>
 
           <Slide direction="left" in={slide} mountOnEnter unmountOnExit>
@@ -76,7 +87,10 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
               container
               sx={[
                 style.Box,
-                { boxShadow: "7px 6px 13px -4px rgba(0,0,0,0.75)" },
+                {
+                  boxShadow: "7px 6px 13px -4px rgba(0,0,0,0.75)",
+                  overflowY: "scroll",
+                },
               ]}
             >
               {categoriges?.map((item, index) => (
@@ -114,7 +128,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                           width: "100%",
                           border: "2px solid black",
                           background:
-                            "linear-gradient(to right, red, yellow, green)",
+                            "linear-gradient(to right, green, yellow, red)",
                         }}
                       ></div>
                     </Box>
@@ -148,7 +162,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                   </Typography>
                   <Typography
                     variant="h5"
-                    sx={{ fontWeight: 600, marginTop: "1rem" }}
+                    sx={{ fontWeight: 900, marginTop: "1rem" }}
                   >
                     {sum}
                   </Typography>
@@ -170,17 +184,17 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                       width: "100%",
                       border: "2px solid black",
                       background:
-                        "linear-gradient(to right, red, yellow, green)",
+                        "linear-gradient(to right, green, yellow, red)",
                     }}
                   ></div>
                 </Box>
               </Box>
 
               <Typography
-                variant="h4"
-                sx={{ fontWeight: 800, textAlign: "center", color: "#072857" }}
+                variant="h5"
+                sx={{ fontWeight: 800, marginTop: "1rem" }}
               >
-                TOXICITY :
+                TOXICITY : {percentageTotal}%
               </Typography>
               <Box
                 sx={{
@@ -202,7 +216,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                     height: "50px",
                     width: "100%",
                     border: "2px solid black",
-                    background: "linear-gradient(to right, red, yellow, green)",
+                    background: "linear-gradient(to right, green, yellow, red)",
                   }}
                 ></div>{" "}
               </Box>
@@ -224,6 +238,110 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                   {percentageTotal || 0}%
                 </Box>
               </Box>
+              <Box sx={style.imagesCard}>
+                <Image
+                  src={dict}
+                  alt="image of ictionary"
+                  style={{ width: "80%", height: "90%" }}
+                />
+
+                <div
+                  style={{
+                    height: "90%",
+                    width: "5%",
+                    border: "2px solid black",
+                    background: "linear-gradient(to top, green, yellow, red)",
+                  }}
+                ></div>
+                <Box
+                  sx={{
+                    position: "relative",
+                    height: "97%",
+                    marginTop: "2.5rem",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      position: "absolute",
+
+                      bottom: `${percentageTotal || 0}%`,
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <ArrowLeftIcon />
+                    {percentageTotal || 0}%
+                  </Box>
+                </Box>
+              </Box>
+              <Box sx={style.imageTwo}>
+                <Image
+                  src={dict3}
+                  alt="image of ictionary"
+                  style={{ width: "100%", height: "100%" }}
+                />
+
+                <div
+                  style={{
+                    height: "60px",
+                    width: "100%",
+                    border: "2px solid black",
+                    background: "linear-gradient(to right, green, yellow, red)",
+                  }}
+                ></div>
+                <Box
+                  sx={{
+                    position: "relative",
+                    marginBottom: "1rem",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      bottom: `${percentageTotal || 0}%`,
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <EjectIcon />
+                    {percentageTotal || 0}%
+                  </Box>
+                </Box>
+              </Box>
+              <Box sx={style.imageTwo}>
+                <div
+                  style={{
+                    height: "60px",
+                    width: "100%",
+                    border: "2px solid black",
+                    background: "linear-gradient(to right, green, yellow, red)",
+                  }}
+                ></div>
+                <Box
+                  sx={{
+                    position: "relative",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      bottom: `${percentageTotal || 0}%`,
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <EjectIcon />
+                    {percentageTotal || 0}%
+                  </Box>
+                </Box>
+                <Image
+                  src={dict1}
+                  alt="image of ictionary"
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </Box>
             </Grid>
           </Slide>
         </Container>
@@ -234,6 +352,26 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
 
 export default Results;
 const style = {
+  imagesCard: {
+    marginY: "2rem",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "1rem",
+    width: "100%",
+    position: "relative",
+  },
+  imageTwo: {
+    marginY: "2rem",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "1rem",
+    width: "100%",
+    position: "relative",
+  },
   container: {
     maxWidth: { xl: "900px" },
   },
@@ -252,6 +390,7 @@ const style = {
     backgroundColor: "white",
     borderRadius: "1rem",
     padding: "2rem",
+    height: "100vh",
   },
   Box1: {
     backgroundColor: "white",
