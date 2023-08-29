@@ -77,7 +77,7 @@ import kidne2 from "../assets/image/kidney2.png";
 import kidne3 from "../assets/image/kidney3.png";
 import kidne4 from "../assets/image/kidney4.png";
 import kidne5 from "../assets/image/kidney5.png";
-import joint from "../assets/image/joints.png";
+import joint from "../assets/image/joints.jpg";
 
 import meta from "../assets/image/metacat.png";
 import meta1 from "../assets/image/metabol1.png";
@@ -110,7 +110,10 @@ function CallengeQuestions() {
   const [Validemail, setValidEmail] = useState(false);
   const [phone, setPhone] = useState("");
   const [height, setHeight] = useState("");
+  const [height1, setHeight1] = useState("");
   const [weight, setWeight] = useState("");
+  const [weight1, setWeight1] = useState("");
+  const [pounds, setPounds] = useState("");
   const [selectedValue, setSelectedValue] = useState("US");
   const handleRadioChange = (event) => {
     setSelectedValue(event.target.value);
@@ -412,7 +415,7 @@ function CallengeQuestions() {
       questionNumber: 1,
     },
     {
-      question: "Needing to get uo in the night to pass urine ?",
+      question: "Needing to get up in the night to pass urine ?",
       image: kidne2,
       questionNumber: 2,
     },
@@ -546,6 +549,15 @@ function CallengeQuestions() {
   };
   const weightNameHandler = (e) => {
     setWeight(e.target.value);
+  };
+  const heightNameHandler1 = (e) => {
+    setHeight1(e.target.value);
+  };
+  const weightNameHandler1 = (e) => {
+    setWeight1(e.target.value);
+  };
+  const poundsNameHandler = (e) => {
+    setPounds(e.target.value);
   };
 
   return (
@@ -689,8 +701,8 @@ function CallengeQuestions() {
                             label="Pounds"
                             variant="outlined"
                             sx={{ width: "100%", marginY: "1rem" }}
-                            value={height}
-                            onChange={heightNameHandler}
+                            value={pounds}
+                            onChange={poundsNameHandler}
                           />
                         </Grid>
                       )}
@@ -714,8 +726,8 @@ function CallengeQuestions() {
                               label="Centimenter"
                               variant="outlined"
                               sx={{ width: "100%", marginY: "1rem" }}
-                              value={height}
-                              onChange={heightNameHandler}
+                              value={height1}
+                              onChange={heightNameHandler1}
                             />
                           </Box>
                           <Box
@@ -735,8 +747,8 @@ function CallengeQuestions() {
                               label="Kilogram"
                               variant="outlined"
                               sx={{ width: "100%", marginY: "1rem" }}
-                              value={weight}
-                              onChange={weightNameHandler}
+                              value={weight1}
+                              onChange={weightNameHandler1}
                             />
                           </Box>
                         </Grid>

@@ -177,7 +177,9 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                     gap: "0.5rem",
                   }}
                 >
-                  <Typography varian="h6">{percentageTotal}%</Typography>
+                  <Typography varian="h6">
+                    {percentageTotal?.toFixed(2)}%
+                  </Typography>
                   <div
                     style={{
                       height: "50px",
@@ -194,7 +196,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                 variant="h5"
                 sx={{ fontWeight: 800, marginTop: "1rem" }}
               >
-                TOXICITY : {percentageTotal}%
+                TOXICITY : {percentageTotal?.toFixed(2)}%
               </Typography>
               <Box
                 sx={{
@@ -232,10 +234,11 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                     position: "absolute",
                     bottom: 0,
                     left: `${percentageTotal || 0}%`,
+                    fontWeight: 600,
                   }}
                 >
                   <EjectIcon />
-                  {percentageTotal || 0}%
+                  {percentageTotal?.toFixed(2) || 0}%
                 </Box>
               </Box>
               <Box sx={style.imagesCard}>
@@ -256,7 +259,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                 <Box
                   sx={{
                     position: "relative",
-                    height: "97%",
+                    height: "90%",
                     marginTop: "2.5rem",
                   }}
                 >
@@ -267,10 +270,11 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                       bottom: `${percentageTotal || 0}%`,
                       display: "flex",
                       flexDirection: "row",
+                      left: "-25px",
                     }}
                   >
                     <ArrowLeftIcon />
-                    {percentageTotal || 0}%
+                    {percentageTotal.toFixed(2) || 0}%
                   </Box>
                 </Box>
               </Box>
@@ -293,6 +297,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                   sx={{
                     position: "relative",
                     marginBottom: "1rem",
+                    width: "100%",
                   }}
                 >
                   <Box
@@ -305,22 +310,26 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                     }}
                   >
                     <EjectIcon />
-                    {percentageTotal || 0}%
+                    {percentageTotal?.toFixed(2) || 0}%
                   </Box>
                 </Box>
               </Box>
               <Box sx={style.imageTwo}>
-                <div
+                {/* <div
                   style={{
+                    position: "relative",
+                    left: "-15px",
                     height: "60px",
                     width: "100%",
                     border: "2px solid black",
                     background: "linear-gradient(to right, green, yellow, red)",
                   }}
-                ></div>
+                ></div> */}
                 <Box
                   sx={{
                     position: "relative",
+                    width: "90%",
+                    marginBottom: "2rem",
                   }}
                 >
                   <Box
@@ -329,11 +338,13 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                       top: 0,
                       bottom: `${percentageTotal || 0}%`,
                       display: "flex",
-                      flexDirection: "column",
+                      flexDirection: "row",
+                      fontWeight: 600,
+                      left: 0,
                     }}
                   >
-                    <EjectIcon />
-                    {percentageTotal || 0}%
+                    <EjectIcon sx={{ transform: "rotate(180deg)" }} />
+                    {percentageTotal?.toFixed(2) || 0}%
                   </Box>
                 </Box>
                 <Image
