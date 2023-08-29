@@ -121,7 +121,9 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                         gap: "0.5rem",
                       }}
                     >
-                      <Typography variant="h6">{item.percent}%</Typography>
+                      <Typography variant="h6">
+                        {item.percent?.toFixed(2)}%
+                      </Typography>
                       <div
                         style={{
                           height: "30px",
@@ -196,7 +198,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                 variant="h5"
                 sx={{ fontWeight: 800, marginTop: "1rem" }}
               >
-                TOXICITY : {percentageTotal?.toFixed(2)}%
+                TOXIC LEVEL : {percentageTotal?.toFixed(2)}%
               </Typography>
               <Box
                 sx={{
@@ -269,7 +271,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                     sx={{
                       position: "absolute",
 
-                      bottom: `${percentageTotal || 0}%`,
+                      top: `${percentageTotal || 0}%`,
                       display: "flex",
                       flexDirection: "row",
                       left: "-25px",
