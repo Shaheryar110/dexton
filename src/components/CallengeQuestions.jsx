@@ -53,7 +53,7 @@ import brain from "../assets/image/brain.png";
 import brain1 from "../assets/image/brain1.png";
 import brain2 from "../assets/image/brain2.png";
 import brain3 from "../assets/image/brain3.jpg";
-import brain4 from "../assets/image/brain4.png";
+import brain4 from "../assets/image/brain4.jpg";
 import brain5 from "../assets/image/brain5.png";
 import brain6 from "../assets/image/brain6.jpg";
 import brain7 from "../assets/image/brain7.png";

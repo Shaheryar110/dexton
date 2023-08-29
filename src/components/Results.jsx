@@ -253,7 +253,9 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                     height: "90%",
                     width: "5%",
                     border: "2px solid black",
-                    background: "linear-gradient(to top, green, yellow, red)",
+                    background:
+                      "linear-gradient(to bottom, green, yellow, red)",
+                    marginLeft: "-1rem",
                   }}
                 ></div>
                 <Box
@@ -287,6 +289,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
 
                 <div
                   style={{
+                    marginTop: "-1.3rem",
                     height: "60px",
                     width: "100%",
                     border: "2px solid black",
@@ -298,13 +301,14 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                     position: "relative",
                     marginBottom: "1rem",
                     width: "100%",
+                    marginTop: "-1rem",
                   }}
                 >
                   <Box
                     sx={{
                       position: "absolute",
                       top: 0,
-                      bottom: `${percentageTotal || 0}%`,
+                      left: `${percentageTotal || 0}%`,
                       display: "flex",
                       flexDirection: "column",
                     }}
@@ -328,7 +332,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                 <Box
                   sx={{
                     position: "relative",
-                    width: "90%",
+                    width: "70%",
                     marginBottom: "2rem",
                   }}
                 >
@@ -336,11 +340,10 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                     sx={{
                       position: "absolute",
                       top: 0,
-                      bottom: `${percentageTotal || 0}%`,
+                      right: `${percentageTotal || 0}%`,
                       display: "flex",
                       flexDirection: "row",
                       fontWeight: 600,
-                      left: 0,
                     }}
                   >
                     <EjectIcon sx={{ transform: "rotate(180deg)" }} />
