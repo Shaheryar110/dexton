@@ -39,7 +39,7 @@ import skin7 from "../assets/image/skin7.png";
 import skin8 from "../assets/image/skin8.png";
 import skin9 from "../assets/image/skin9.png";
 import earNose from "../assets/image/ear.png";
-import ear1 from "../assets/image/ear1.png";
+import ear1 from "../assets/image/ear1.jpg";
 import ear2 from "../assets/image/ear2.png";
 import ear3 from "../assets/image/ear3.png";
 import ear4 from "../assets/image/ear4.jpg";
@@ -76,22 +76,22 @@ import kidne1 from "../assets/image/Kidney1.png";
 import kidne2 from "../assets/image/kidney2.png";
 import kidne3 from "../assets/image/kidney3.png";
 import kidne4 from "../assets/image/kidney4.png";
-import kidne5 from "../assets/image/kidney5.png";
+import kidne5 from "../assets/image/kidney5.jpg";
 import joint from "../assets/image/joints.jpg";
 
 import meta from "../assets/image/metacat.png";
 import meta1 from "../assets/image/metabol1.png";
-import meta2 from "../assets/image/metabol2.png";
-import meta3 from "../assets/image/metabol3.png";
+import meta2 from "../assets/image/metabol2.jpg";
+import meta3 from "../assets/image/metabol3.jpg";
 import meta4 from "../assets/image/metabol4.png";
-import meta5 from "../assets/image/metabol5.png";
+import meta5 from "../assets/image/metabol5.jpg";
 import meta6 from "../assets/image/meta6.png";
 
 import joint1 from "../assets/image/meta0.png";
 import joint2 from "../assets/image/joint2.png";
-import joint3 from "../assets/image/joint3.png";
+import joint3 from "../assets/image/joint3.jpg";
 import joint4 from "../assets/image/joint4.png";
-import joint5 from "../assets/image/joint5.png";
+import joint5 from "../assets/image/joint5.jpg";
 import {
   FormControl,
   FormControlLabel,
@@ -849,7 +849,7 @@ function CallengeQuestions() {
                     }}
                   >
                     <Image
-                      style={{ height: "70%", width: "70%" }}
+                      style={{ height: "70%", width: "100%" }}
                       src={currentImage}
                       alt="oops"
                     />
