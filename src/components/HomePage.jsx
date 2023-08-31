@@ -7,7 +7,7 @@ import Image from "next/image";
 import bg from "../assets/image/bg.jpg";
 import back from "../assets/image/back.png";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
-
+import Zoom from "@mui/material/Zoom";
 function HomePage() {
   const style = {
     container: {
@@ -218,7 +218,7 @@ function HomePage() {
           All the rights reserved to Dr. Shlomi Gavish DOM, AP
         </Typography>
         <Box sx={style.textBoxImg}>
-          <Slide direction="left" in={slide} mountOnEnter unmountOnExit>
+          <Zoom in={slide} mountOnEnter unmountOnExit>
             <Container sx={style.container1}>
               <Grid
                 container
@@ -265,7 +265,7 @@ function HomePage() {
                 </Grid>
               </Grid>
             </Container>
-          </Slide>
+          </Zoom>
         </Box>
       </Box>
     </>

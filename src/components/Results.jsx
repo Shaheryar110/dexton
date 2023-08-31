@@ -7,6 +7,7 @@ import dict1 from "../assets/image/dict1.png";
 import dict3 from "../assets/image/dict3.png";
 import Image from "next/image";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
+import Zoom from "@mui/material/Zoom";
 function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
   const [slide, setSlide] = useState(true);
 
@@ -82,7 +83,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
             Final Results
           </Typography>
 
-          <Slide direction="left" in={slide} mountOnEnter unmountOnExit>
+          <Zoom in={slide} mountOnEnter unmountOnExit>
             <Grid
               container
               sx={[
@@ -359,7 +360,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                 />
               </Box>
             </Grid>
-          </Slide>
+          </Zoom>
         </Container>
       </Box>
     </Box>

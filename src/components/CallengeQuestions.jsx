@@ -8,7 +8,7 @@ const patua = Patua_One({
   subsets: ["latin"],
   weight: ["400"],
 });
-
+import Zoom from "@mui/material/Zoom";
 import bg from "../assets/image/bg.jpg";
 import Aggressive from "../assets/image/Aggressive.png";
 import Anxiety from "../assets/image/Anxiety.png";
@@ -578,7 +578,7 @@ function CallengeQuestions() {
                 Personal Information
               </Typography>
 
-              <Slide direction="left" in={slide} mountOnEnter unmountOnExit>
+              <Zoom in={slide} mountOnEnter unmountOnExit>
                 <Grid
                   container
                   sx={[
@@ -760,7 +760,7 @@ function CallengeQuestions() {
                     </Grid>
                   </Grid>
                 </Grid>
-              </Slide>
+              </Zoom>
               <ToastContainer />
             </Container>
           </Box>
@@ -778,7 +778,7 @@ function CallengeQuestions() {
             </Typography>
           </Box>
           <Container sx={style.container}>
-            <Slide direction="left" in={slide} mountOnEnter unmountOnExit>
+            <Zoom in={slide} mountOnEnter unmountOnExit>
               <Grid
                 container
                 sx={[
@@ -1006,7 +1006,7 @@ function CallengeQuestions() {
                   )}
                 </Box>
               </Grid>
-            </Slide>
+            </Zoom>
           </Container>
         </Box>
       ) : (
