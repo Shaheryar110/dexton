@@ -128,7 +128,7 @@ function CallengeQuestions() {
     },
     bg: {
       width: "100%",
-      height: "100vh",
+      height: "100%",
       backgroundImage: `url(${bg.src})`,
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
@@ -137,6 +137,8 @@ function CallengeQuestions() {
       backgroundColor: "white",
       borderRadius: "1rem",
       padding: "2rem",
+      width: "100%",
+      height: "100%",
     },
     Box1: {
       backgroundColor: "white",
@@ -148,7 +150,7 @@ function CallengeQuestions() {
       fontWeight: 900,
     },
     textBox: {
-      paddingY: "2rem",
+      paddingY: { md: "2rem", xs: "1rem" },
       width: "100%",
       display: "flex",
       flexDirection: "column",
@@ -288,7 +290,7 @@ function CallengeQuestions() {
       alignItems: "center",
       justifyContent: "center",
       width: "100%",
-      marginX: "15rem",
+      marginX: { md: "15rem", xs: "5rem" },
       border: "1px solid #082857",
       ":hover": {
         backgroundColor: "white",
@@ -588,12 +590,15 @@ function CallengeQuestions() {
                 >
                   <Grid item lg={12} sx={{ position: "relative" }}>
                     <Grid container columnSpacing={3} rowSpacing={3}>
-                      <Grid item lg={6}>
+                      <Grid item lg={6} xs={7}>
                         <Box sx={style.formContainer}>
                           <TextField
                             label="First Name"
                             variant="outlined"
-                            sx={{ width: "100%", marginY: "1rem" }}
+                            sx={{
+                              width: { md: "100%", xs: "50%" },
+                              marginY: "1rem",
+                            }}
                             value={firstName}
                             onChange={firstNameHandler}
                           />
@@ -601,13 +606,19 @@ function CallengeQuestions() {
                           <TextField
                             label="Email"
                             variant="outlined"
-                            sx={{ width: "100%", marginY: "1rem" }}
+                            sx={{
+                              width: { md: "100%", xs: "50%" },
+                              marginY: "1rem",
+                            }}
                             value={email}
                             onChange={emailNameHandler}
                           />
                           <LocalizationProvider
                             dateAdapter={AdapterDayjs}
-                            sx={{ width: "100%", marginY: "1rem" }}
+                            sx={{
+                              width: { md: "100%", xs: "50%" },
+                              marginY: "1rem",
+                            }}
                             required
                           >
                             <DatePicker
@@ -617,25 +628,34 @@ function CallengeQuestions() {
                           </LocalizationProvider>
                         </Box>
                       </Grid>
-                      <Grid item lg={6}>
+                      <Grid item lg={6} xs={7}>
                         <Box sx={style.formContainer}>
                           <TextField
                             label="Last Name"
                             variant="outlined"
-                            sx={{ width: "100%", marginY: "1rem" }}
+                            sx={{
+                              width: { md: "100%", xs: "50%" },
+                              marginY: "1rem",
+                            }}
                             value={lastName}
                             onChange={lastNameHandler}
                           />
                           <TextField
                             label="Phone"
                             variant="outlined"
-                            sx={{ width: "100%", marginY: "1rem" }}
+                            sx={{
+                              width: { md: "100%", xs: "50%" },
+                              marginY: "1rem",
+                            }}
                             value={phone}
                             onChange={phoneNameHandler}
                           />
                           <LocalizationProvider
                             dateAdapter={AdapterDayjs}
-                            sx={{ width: "100%", marginY: "1rem" }}
+                            sx={{
+                              width: { md: "100%", xs: "50%" },
+                              marginY: "1rem",
+                            }}
                           >
                             <DatePicker
                               label="Date Of Birth"
@@ -644,7 +664,7 @@ function CallengeQuestions() {
                           </LocalizationProvider>
                         </Box>
                       </Grid>
-                      <Grid item lg={6}>
+                      <Grid item lg={6} xs={7}>
                         <FormControl component="fieldset">
                           <RadioGroup
                             aria-label="radio-group"
@@ -670,7 +690,7 @@ function CallengeQuestions() {
                           </RadioGroup>
                         </FormControl>
                       </Grid>
-                      <Grid item lg={6}></Grid>
+                      <Grid item lg={6} xs={12}></Grid>
                       {selectedValue == "US" && (
                         <Grid item lg={8}>
                           <Box
@@ -838,7 +858,7 @@ function CallengeQuestions() {
                     </Box>
                   </Box>
                 </Grid>
-                <Grid item lg={5}>
+                <Grid item sm={5} xs={12}>
                   <Box
                     sx={{
                       height: "100%",
@@ -950,7 +970,7 @@ function CallengeQuestions() {
                     <ArrowRightAltIcon
                       style={{
                         transform: "rotate(180deg)",
-                        fontSize: "2rem",
+                        fontSize: { sm: "2rem", xs: "1rem" },
                       }}
                     />
                     PREVIOUS QUESTION
@@ -973,7 +993,7 @@ function CallengeQuestions() {
                       NEXT QUESTION
                       <ArrowRightAltIcon
                         style={{
-                          fontSize: "2rem",
+                          fontSize: { sm: "2rem", xs: "1rem" },
                         }}
                       />
                     </Typography>

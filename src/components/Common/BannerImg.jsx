@@ -143,7 +143,7 @@ function BannerImg({ img, category, func, slide }) {
       fontWeight: 700,
       paddingRight: "4rem",
       paddingTop: "4rem",
-      fontSize: "3rem",
+      fontSize: { md: "3rem", xs: "1.5rem" },
       fontFamily: "Roboto Slab, sans-serif",
       maxWidth: "70%",
       textAlign: "center",
@@ -153,13 +153,13 @@ function BannerImg({ img, category, func, slide }) {
       fontWeight: 700,
       color: "#082958",
       marginBottom: "2rem",
-      fontSize: "1rem",
-      marginRight: "3rem",
+      fontSize: { md: "1rem", xs: "0.7rem" },
+      marginRight: { md: "3rem", xs: "1rem" },
       ":hover": {
         backgroundColor: "#082958",
         color: "white",
         marginBottom: "2rem",
-        fontSize: "1rem",
+        fontSize: { md: "1rem", xs: "0.7rem" },
         marginRight: "3rem",
         fontWeight: 700,
         transition: "all ease 0.5s",
@@ -212,7 +212,7 @@ function BannerImg({ img, category, func, slide }) {
                 { boxShadow: "7px 6px 13px -4px rgba(0,0,0,0.75)" },
               ]}
             >
-              <Grid item lg={12} sx={{ position: "relative" }}>
+              <Grid item lg={12} sx={{ width: "100%", position: "relative" }}>
                 <Box
                   sx={{
                     width: "100%",

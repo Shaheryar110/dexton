@@ -99,9 +99,9 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                   <Box
                     sx={{
                       display: "flex",
-                      flexDirection: "row",
+                      flexDirection: { sm: "row", xs: "column" },
                       alignItems: "Center",
-                      justifyContent: "space-between",
+                      justifyContent: { sm: "space-between", xs: "center" },
                       width: "100%",
                     }}
                   >
