@@ -128,7 +128,7 @@ function CallengeQuestions() {
     },
     bg: {
       width: "100%",
-      height: "100%",
+
       backgroundImage: `url(${bg.src})`,
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
@@ -136,7 +136,7 @@ function CallengeQuestions() {
     Box: {
       backgroundColor: "white",
       borderRadius: "1rem",
-      padding: "2rem",
+      padding: { md: "2rem", xs: "1rem" },
       width: "100%",
       height: "100%",
     },
@@ -148,6 +148,7 @@ function CallengeQuestions() {
       color: "white",
       fontSize: "3rem",
       fontWeight: 900,
+      display: { md: "block", xs: "none" },
     },
     textBox: {
       paddingY: { md: "2rem", xs: "1rem" },
@@ -169,7 +170,7 @@ function CallengeQuestions() {
       marginY: "2rem",
     },
     textBoxImg: {
-      paddingTop: "5rem",
+      paddingTop: { md: "5rem", xs: "1rem" },
       width: "100%",
       display: "flex",
       flexDirection: "column",
@@ -568,14 +569,27 @@ function CallengeQuestions() {
         <Box sx={style.bg}>
           <Typography
             variant="h6"
-            sx={{ color: "grey", position: "absolute", top: 20, right: 20 }}
+            sx={{
+              display: { md: "block", xs: "none" },
+              color: "grey",
+              position: "absolute",
+              top: 20,
+              right: 20,
+            }}
           >
             All the rights reserved to Dr. Shlomi Gavish DOM, AP
           </Typography>
           <Box sx={style.textBoxImg}>
             <Container sx={style.container}>
               <Typography
-                sx={[style.mainHead, { textAlign: "center", marginBottom: 3 }]}
+                sx={[
+                  style.mainHead,
+                  {
+                    textAlign: "center",
+                    marginBottom: 3,
+                    display: { md: "block", xs: "none" },
+                  },
+                ]}
               >
                 Personal Information
               </Typography>
@@ -692,10 +706,17 @@ function CallengeQuestions() {
                       </Grid>
                       <Grid item lg={6} xs={12}></Grid>
                       {selectedValue == "US" && (
-                        <Grid item lg={8}>
+                        <Grid
+                          item
+                          lg={8}
+                          xs={12}
+                          sx={{
+                            paddingTop: { md: "1rem", xs: "0px !important" },
+                          }}
+                        >
                           <Box
                             sx={{
-                              width: "100%",
+                              width: { md: "100%", xs: "50%" },
                               display: "flex",
                               flexDirection: "row",
                               gap: "1rem",
@@ -704,7 +725,10 @@ function CallengeQuestions() {
                             <TextField
                               label="Feet"
                               variant="outlined"
-                              sx={{ width: "100%", marginY: "1rem" }}
+                              sx={{
+                                width: { md: "100%", xs: "50%" },
+                                marginY: "1rem",
+                              }}
                               value={height}
                               onChange={heightNameHandler}
                             />
@@ -712,7 +736,10 @@ function CallengeQuestions() {
                             <TextField
                               label="Inches"
                               variant="outlined"
-                              sx={{ width: "100%", marginY: "1rem" }}
+                              sx={{
+                                width: { md: "100%", xs: "50%" },
+                                marginY: "1rem",
+                              }}
                               value={weight}
                               onChange={weightNameHandler}
                             />
@@ -720,7 +747,10 @@ function CallengeQuestions() {
                           <TextField
                             label="Pounds"
                             variant="outlined"
-                            sx={{ width: "100%", marginY: "1rem" }}
+                            sx={{
+                              width: { md: "100%", xs: "50%" },
+                              marginY: "1rem",
+                            }}
                             value={pounds}
                             onChange={poundsNameHandler}
                           />
@@ -728,7 +758,7 @@ function CallengeQuestions() {
                       )}
 
                       {selectedValue == "Metric" && (
-                        <Grid item lg={8}>
+                        <Grid item lg={8} xs={12}>
                           <Box
                             sx={{
                               display: "flex",
@@ -745,7 +775,10 @@ function CallengeQuestions() {
                             <TextField
                               label="Centimenter"
                               variant="outlined"
-                              sx={{ width: "100%", marginY: "1rem" }}
+                              sx={{
+                                width: { md: "100%", xs: "50%" },
+                                marginY: "1rem",
+                              }}
                               value={height1}
                               onChange={heightNameHandler1}
                             />
@@ -766,7 +799,10 @@ function CallengeQuestions() {
                             <TextField
                               label="Kilogram"
                               variant="outlined"
-                              sx={{ width: "100%", marginY: "1rem" }}
+                              sx={{
+                                width: { md: "100%", xs: "50%" },
+                                marginY: "1rem",
+                              }}
                               value={weight1}
                               onChange={weightNameHandler1}
                             />
@@ -858,18 +894,27 @@ function CallengeQuestions() {
                     </Box>
                   </Box>
                 </Grid>
-                <Grid item sm={5} xs={12}>
+                <Grid
+                  item
+                  sm={5}
+                  xs={12}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
                   <Box
                     sx={{
-                      height: "100%",
-                      width: "100%",
+                      height: { md: "100%", xs: "40px" },
+                      width: { md: "100%", xs: "40px" },
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
                     <Image
-                      style={{ height: "70%", width: "100%" }}
+                      style={{ height: "100%", width: "100%" }}
                       src={currentImage}
                       alt="oops"
                     />
