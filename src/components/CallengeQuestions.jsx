@@ -461,7 +461,11 @@ function CallengeQuestions() {
   const [subTotal, setSubTotal] = useState([]);
   const [activeButton, setActiveButton] = useState(null);
   const [subtotalIndex, setSubTotalIndex] = useState(0);
+  useEffect(() => {
+    console.log(activeButton);
+  }, [activeButton]);
   const handleAnswerClick = (points) => {
+    console.log(points);
     setActiveButton(Number(points));
   };
   const [total, setTotal] = useState(0);
@@ -851,40 +855,105 @@ function CallengeQuestions() {
                   </Typography>
                   <Box>
                     <Box sx={style.answers}>
-                      <Box sx={style.buttonWithAnswer}>
-                        <Box sx={style.points} backgroundColor="#429F46">
+                      <Box
+                        sx={style.buttonWithAnswer}
+                        onClick={() => handleAnswerClick(0)}
+                      >
+                        <Box
+                          sx={[
+                            style.points,
+                            {
+                              backgroundColor:
+                                activeButton === 0 ? "#27772A" : "#429F46",
+                              border:
+                                activeButton === 0 ? "2px solid black" : "none",
+                            },
+                          ]}
+                        >
                           0
                         </Box>
                         <Typography sx={style.pointsAns}>
                           Never or almost never have the symptom
                         </Typography>
                       </Box>
-                      <Box sx={style.buttonWithAnswer}>
-                        <Box sx={style.points} backgroundColor="#C0CA33">
+                      <Box
+                        sx={style.buttonWithAnswer}
+                        onClick={() => handleAnswerClick(1)}
+                      >
+                        <Box
+                          sx={[
+                            style.points,
+                            {
+                              backgroundColor:
+                                activeButton === 1 ? "#969E1F" : "#C0CA33",
+                              border:
+                                activeButton === 1 ? "2px solid black" : "none",
+                            },
+                          ]}
+                        >
                           1
                         </Box>
                         <Typography sx={style.pointsAns}>
                           Occasionally have it
                         </Typography>
                       </Box>
-                      <Box sx={style.buttonWithAnswer}>
-                        <Box sx={style.points} backgroundColor="#FDD835">
+                      <Box
+                        sx={style.buttonWithAnswer}
+                        onClick={() => handleAnswerClick(2)}
+                      >
+                        <Box
+                          sx={[
+                            style.points,
+                            {
+                              backgroundColor:
+                                activeButton === 2 ? "#D5AE00" : "#FDD835",
+                              border:
+                                activeButton === 2 ? "2px solid black" : "none",
+                            },
+                          ]}
+                        >
                           2
                         </Box>
                         <Typography sx={style.pointsAns}>
                           Occasionally have it, effect is severe
                         </Typography>
                       </Box>
-                      <Box sx={style.buttonWithAnswer}>
-                        <Box sx={style.points} backgroundColor="#FB8C00">
+                      <Box
+                        sx={style.buttonWithAnswer}
+                        onClick={() => handleAnswerClick(3)}
+                      >
+                        <Box
+                          sx={[
+                            style.points,
+                            {
+                              backgroundColor:
+                                activeButton === 3 ? "#C76F00" : "#FB8C00",
+                              border:
+                                activeButton === 3 ? "2px solid black" : "none",
+                            },
+                          ]}
+                        >
                           3
                         </Box>
                         <Typography sx={style.pointsAns}>
                           Frequently have it, effect is not severe
                         </Typography>
                       </Box>
-                      <Box sx={style.buttonWithAnswer}>
-                        <Box sx={style.points} backgroundColor="#E53733">
+                      <Box
+                        sx={style.buttonWithAnswer}
+                        onClick={() => handleAnswerClick(4)}
+                      >
+                        <Box
+                          sx={[
+                            style.points,
+                            {
+                              backgroundColor:
+                                activeButton === 4 ? "#B71916" : "#E53733",
+                              border:
+                                activeButton === 4 ? "2px solid black" : "none",
+                            },
+                          ]}
+                        >
                           4
                         </Box>
                         <Typography sx={style.pointsAns}>
@@ -920,7 +989,7 @@ function CallengeQuestions() {
                     />
                   </Box>
                 </Grid>
-                <Box sx={style.QuestionBox}>
+                {/* <Box sx={style.QuestionBox}>
                   <Typography variant="h6" sx={style.selectQuestion}>
                     Please select one of the following{" "}
                   </Typography>
@@ -996,7 +1065,7 @@ function CallengeQuestions() {
                       4
                     </Box>
                   </Box>
-                </Box>
+                </Box> */}
                 <Box sx={style.QuestionBox1}>
                   <Typography
                     sx={[
