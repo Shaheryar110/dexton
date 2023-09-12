@@ -179,12 +179,12 @@ function CallengeQuestions() {
     },
     question: {
       color: "#082857",
-      marginY: "1rem",
+      marginY: { sm: "1rem", xs: "0.3rem" },
       width: "100%",
       fontWeight: 700,
     },
     answers: {
-      marginY: "2rem",
+      marginY: { sm: "2rem", xs: "0.3rem" },
     },
     buttonWithAnswer: {
       display: "flex",
@@ -205,7 +205,7 @@ function CallengeQuestions() {
       fontSize: "1.1rem",
     },
     pointsAns: {
-      fontSize: "1.1rem",
+      fontSize: { sm: "1.1rem", xs: "0.7rem" },
       color: "#082857",
       display: "flex",
       alignItems: "center",
@@ -230,8 +230,8 @@ function CallengeQuestions() {
       flexDirection: "row",
       justifyContent: "space-between",
       alignItems: "center",
-      marginBottom: "1.5rem",
-      marginY: "1.5rem",
+      marginBottom: { sm: "1.5rem", xs: "0.5rem" },
+      marginY: { sm: "1.5rem", xs: "0.5rem" },
     },
     pointBo: {
       width: "100%",
@@ -277,6 +277,7 @@ function CallengeQuestions() {
     },
     formContainer: {
       width: "100%",
+      paddingTop: "0px !important",
     },
     formButton: {
       backgroundColor: "#082857",
@@ -305,9 +306,10 @@ function CallengeQuestions() {
       },
     },
     selectQuestion: {
-      marginY: "1rem",
+      marginY: { sm: "1rem", xs: "0.2rem" },
       fontWeight: 600,
-      paddingLeft: "2rem",
+      paddingLeft: { sm: "2rem", xs: "1rem" },
+      fontSize: { sm: "20px", xs: "13px" },
     },
   };
   const emotion = [
@@ -610,28 +612,40 @@ function CallengeQuestions() {
                             label="First Name"
                             variant="outlined"
                             sx={{
-                              width: { md: "100%", xs: "50%" },
-                              marginY: "1rem",
+                              width: { xs: "100%" },
+                              marginY: { sm: "1rem", xs: "2px" },
                             }}
                             value={firstName}
                             onChange={firstNameHandler}
                           />
-
+                          <TextField
+                            label="Last Name"
+                            variant="outlined"
+                            sx={{
+                              width: { xs: "100%" },
+                              marginY: { sm: "1rem", xs: "2px" },
+                              display: { sm: "none", xs: "flex" },
+                            }}
+                            value={lastName}
+                            onChange={lastNameHandler}
+                          />
                           <TextField
                             label="Email"
                             variant="outlined"
                             sx={{
                               width: { md: "100%", xs: "50%" },
-                              marginY: "1rem",
+                              marginY: { sm: "1rem", xs: "2px" },
+                              display: { sm: "flex", xs: "none" },
                             }}
                             value={email}
                             onChange={emailNameHandler}
                           />
+
                           <LocalizationProvider
                             dateAdapter={AdapterDayjs}
                             sx={{
                               width: { md: "100%", xs: "50%" },
-                              marginY: "1rem",
+                              marginY: { sm: "1rem", xs: "2px" },
                             }}
                             required
                           >
@@ -642,24 +656,36 @@ function CallengeQuestions() {
                           </LocalizationProvider>
                         </Box>
                       </Grid>
-                      <Grid item lg={6} xs={7}>
+                      <Grid item lg={6} xs={7} paddingTop="0px !important">
                         <Box sx={style.formContainer}>
                           <TextField
                             label="Last Name"
                             variant="outlined"
                             sx={{
                               width: { md: "100%", xs: "50%" },
-                              marginY: "1rem",
+                              marginY: { sm: "1rem", xs: "2px" },
+                              display: { md: "flex", xs: "none" },
                             }}
                             value={lastName}
                             onChange={lastNameHandler}
                           />
                           <TextField
-                            label="Phone"
+                            label="Email"
                             variant="outlined"
                             sx={{
                               width: { md: "100%", xs: "50%" },
-                              marginY: "1rem",
+                              marginY: { sm: "1rem", xs: "2px" },
+                              display: { sm: "none", xs: "flex" },
+                            }}
+                            value={email}
+                            onChange={emailNameHandler}
+                          />
+                          <TextField
+                            label="Phone"
+                            variant="outlined"
+                            sx={{
+                              width: { xs: "100%" },
+                              marginY: { sm: "1rem", xs: "2px" },
                             }}
                             value={phone}
                             onChange={phoneNameHandler}
@@ -668,7 +694,7 @@ function CallengeQuestions() {
                             dateAdapter={AdapterDayjs}
                             sx={{
                               width: { md: "100%", xs: "50%" },
-                              marginY: "1rem",
+                              marginY: { sm: "1rem", xs: "2px" },
                             }}
                           >
                             <DatePicker
@@ -678,7 +704,7 @@ function CallengeQuestions() {
                           </LocalizationProvider>
                         </Box>
                       </Grid>
-                      <Grid item lg={6} xs={7}>
+                      <Grid item lg={6} xs={12}>
                         <FormControl component="fieldset">
                           <RadioGroup
                             aria-label="radio-group"
@@ -704,7 +730,13 @@ function CallengeQuestions() {
                           </RadioGroup>
                         </FormControl>
                       </Grid>
-                      <Grid item lg={6} xs={12}></Grid>
+                      <Grid
+                        item
+                        lg={6}
+                        xs={12}
+                        paddingTop="0px !important"
+                        sx={{ display: { md: "flex", xs: "none" } }}
+                      ></Grid>
                       {selectedValue == "US" && (
                         <Grid
                           item
@@ -716,7 +748,7 @@ function CallengeQuestions() {
                         >
                           <Box
                             sx={{
-                              width: { md: "100%", xs: "50%" },
+                              width: { md: "100%", xs: "70%" },
                               display: "flex",
                               flexDirection: "row",
                               gap: "1rem",
@@ -749,7 +781,7 @@ function CallengeQuestions() {
                             variant="outlined"
                             sx={{
                               width: { md: "100%", xs: "50%" },
-                              marginY: "1rem",
+                              marginY: { sm: "1rem", xs: "0px" },
                             }}
                             value={pounds}
                             onChange={poundsNameHandler}
@@ -758,13 +790,16 @@ function CallengeQuestions() {
                       )}
 
                       {selectedValue == "Metric" && (
-                        <Grid item lg={8} xs={12}>
+                        <Grid item lg={8} xs={10} paddingTop="0px !important">
                           <Box
                             sx={{
                               display: "flex",
                               flexDirection: "row",
                               alignItems: "center",
-                              justifyContent: "space-between",
+                              justifyContent: {
+                                sm: "space-between",
+                                xs: "center",
+                              },
                             }}
                           >
                             <Typography
@@ -788,7 +823,10 @@ function CallengeQuestions() {
                               display: "flex",
                               flexDirection: "row",
                               alignItems: "center",
-                              justifyContent: "space-between",
+                              justifyContent: {
+                                sm: "space-between",
+                                xs: "center",
+                              },
                             }}
                           >
                             <Typography
@@ -1005,7 +1043,7 @@ function CallengeQuestions() {
                         backgroundColor: "#082A58",
                         color: "white",
                         paddingY: "0.7rem",
-                        paddingX: "1rem",
+                        paddingX: { sm: "1rem", xs: "0.3rem" },
                         borderRadius: "10px",
                         boxShadow: "7px 6px 13px -4px rgba(0,0,0,0.75)",
                       },
