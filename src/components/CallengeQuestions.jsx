@@ -518,7 +518,7 @@ function CallengeQuestions() {
   const [form, setForm] = useState(false);
   const formSubmit = () => {
     if (firstName && lastName && email && phone) {
-      if (feet >= 8 && inches >= 10 && pounds > 351 && height1 >= 180) {
+      if ((feet < 9 && inches < 10 && pounds < 351) || height1 < 180) {
         handleFormSubmit();
       } else {
         toast.error(`
