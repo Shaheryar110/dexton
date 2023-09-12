@@ -98,7 +98,7 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-
+import dayjs from "dayjs";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -109,9 +109,9 @@ function CallengeQuestions() {
   const [email, setEmail] = useState("");
   const [Validemail, setValidEmail] = useState(false);
   const [phone, setPhone] = useState("");
-  const [height, setHeight] = useState("");
+  const [feet, setFeet] = useState("");
   const [height1, setHeight1] = useState("");
-  const [weight, setWeight] = useState("");
+  const [inches, setInches] = useState("");
   const [weight1, setWeight1] = useState("");
   const [pounds, setPounds] = useState("");
   const [selectedValue, setSelectedValue] = useState("US");
@@ -182,6 +182,7 @@ function CallengeQuestions() {
       marginY: { sm: "1rem", xs: "0.3rem" },
       width: "100%",
       fontWeight: 700,
+      fontSize: { sm: "20px", xs: "15px" },
     },
     answers: {
       marginY: { sm: "2rem", xs: "0.3rem" },
@@ -492,7 +493,10 @@ function CallengeQuestions() {
         setCurrentQuestionIndex(currentQuestionIndex - 1);
     }
   };
+  const [selectedDate, setSelectedDate] = React.useState(null);
 
+  // Disable past dates by setting minDate to today
+  const minDate = dayjs();
   const currentQuestion = emotion[currentQuestionIndex]?.question;
   const currentImage = emotion[currentQuestionIndex]?.image;
   const questionNumber = emotion[currentQuestionIndex]?.questionNumber;
@@ -514,7 +518,16 @@ function CallengeQuestions() {
   const [form, setForm] = useState(false);
   const formSubmit = () => {
     if (firstName && lastName && email && phone) {
-      handleFormSubmit();
+      if (feet >= 8 && inches >= 10 && pounds > 351 && height1 >= 180) {
+        handleFormSubmit();
+      } else {
+        toast.error(`
+        Feet should be between 1 to 8 
+        Inches should be between 1 to 10 
+        pounds should be between 1 to 350
+        Centimeter should be between 1 to 180
+         `);
+      }
     } else {
       toast.error("Invalid or Empty Feilds");
     }
@@ -553,11 +566,11 @@ function CallengeQuestions() {
   const phoneNameHandler = (e) => {
     setPhone(e.target.value);
   };
-  const heightNameHandler = (e) => {
-    setHeight(e.target.value);
+  const feetNameHandler = (e) => {
+    setFeet(e.target.value);
   };
-  const weightNameHandler = (e) => {
-    setWeight(e.target.value);
+  const inchesNameHandler = (e) => {
+    setInches(e.target.value);
   };
   const heightNameHandler1 = (e) => {
     setHeight1(e.target.value);
@@ -655,12 +668,25 @@ function CallengeQuestions() {
                           >
                             <DatePicker
                               label="Test Date"
+                              value={selectedDate}
+                              onChange={(date) => setSelectedDate(date)}
+                              minDate={minDate}
                               sx={{ width: "100%" }}
                             />
                           </LocalizationProvider>
                         </Box>
                       </Grid>
-                      <Grid item lg={6} xs={7} paddingTop="0px !important">
+                      <Grid
+                        item
+                        lg={6}
+                        xs={7}
+                        sx={{
+                          paddingTop: {
+                            sm: "1.4rem !important",
+                            xs: "0px !important",
+                          },
+                        }}
+                      >
                         <Box sx={style.formContainer}>
                           <TextField
                             label="Last Name"
@@ -703,6 +729,9 @@ function CallengeQuestions() {
                           >
                             <DatePicker
                               label="Date Of Birth"
+                              value={selectedDate}
+                              onChange={(date) => setSelectedDate(date)}
+                              minDate={minDate}
                               sx={{ width: "100%" }}
                             />
                           </LocalizationProvider>
@@ -765,8 +794,8 @@ function CallengeQuestions() {
                                 width: { md: "100%", xs: "50%" },
                                 marginY: "1rem",
                               }}
-                              value={height}
-                              onChange={heightNameHandler}
+                              value={feet}
+                              onChange={feetNameHandler}
                             />
 
                             <TextField
@@ -776,8 +805,8 @@ function CallengeQuestions() {
                                 width: { md: "100%", xs: "50%" },
                                 marginY: "1rem",
                               }}
-                              value={weight}
-                              onChange={weightNameHandler}
+                              value={inches}
+                              onChange={inchesNameHandler}
                             />
                           </Box>
                           <TextField
@@ -1013,8 +1042,8 @@ function CallengeQuestions() {
                 >
                   <Box
                     sx={{
-                      height: { md: "100%", xs: "40px" },
-                      width: { md: "100%", xs: "40px" },
+                      height: { md: "65%", xs: "100px" },
+                      width: { md: "65%", xs: "100px" },
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
