@@ -494,6 +494,7 @@ function CallengeQuestions() {
     }
   };
   const [selectedDate, setSelectedDate] = React.useState(null);
+  const [selectedDob, setSelectedDob] = React.useState(null);
 
   // Disable past dates by setting minDate to today
   const minDate = dayjs();
@@ -730,9 +731,8 @@ function CallengeQuestions() {
                           >
                             <DatePicker
                               label="Date Of Birth"
-                              value={selectedDate}
-                              onChange={(date) => setSelectedDate(date)}
-                              minDate={minDate}
+                              value={selectedDob}
+                              onChange={(date) => setSelectedDob(date)}
                               sx={{ width: "100%" }}
                             />
                           </LocalizationProvider>
