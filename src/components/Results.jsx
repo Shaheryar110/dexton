@@ -73,7 +73,13 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
     <Box sx={style.bg}>
       <Typography
         variant="h6"
-        sx={{ color: "grey", position: "absolute", top: 20, right: 20 }}
+        sx={{
+          color: "grey",
+          position: "absolute",
+          top: 20,
+          right: 20,
+          display: { xl: "block", xs: "none" },
+        }}
       >
         All the rights reserved to Dr. Shlomi Gavish DOM, AP
       </Typography>

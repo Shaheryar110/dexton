@@ -589,11 +589,12 @@ function CallengeQuestions() {
           <Typography
             variant="h6"
             sx={{
-              display: { md: "block", xs: "none" },
+              display: { md: "block", xs: "none !important" },
               color: "grey",
               position: "absolute",
               top: 20,
               right: 20,
+              zIndex: -1,
             }}
           >
             All the rights reserved to Dr. Shlomi Gavish DOM, AP
