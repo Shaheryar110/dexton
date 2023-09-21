@@ -8,6 +8,7 @@ import dict3 from "../assets/image/dict3.png";
 import Image from "next/image";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import Zoom from "@mui/material/Zoom";
+import axios from "axios";
 function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
   const [slide, setSlide] = useState(true);
 
@@ -17,6 +18,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
       ? total.split(",").map((data) => Number(data))
       : [];
   console.log(totalScore, "totalScore");
+
   const categoriges = [
     {
       cat: "Emotions",
@@ -67,7 +69,24 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
   const percentageTotal = (sum / 252) * 100;
   useEffect(() => {
     calculateSum();
-    console.log(sum);
+    const retrievedValue = JSON.parse(localStorage.getItem("form data"));
+    const finalData = {
+      ...retrievedValue,
+      Emotions: totalScore[0],
+      Skin: totalScore[1],
+      Ear: totalScore[2],
+      Brain: totalScore[3],
+      DigestiveSystem: totalScore[4],
+      Kidney: totalScore[5],
+      Joints: totalScore[6],
+      Metabolism: totalScore[7],
+      sum: sum,
+      toxicLevel: percentageTotal,
+    };
+    // console.log(JSON.parse(retrievedValue), "retrievedValue");
+    axios.post("http://localhost:5001/api/mail", finalData).then((data) => {
+      console.log(data, "datas");
+    });
   }, [totalScore]);
   return (
     <Box sx={style.bg}>

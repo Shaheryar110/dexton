@@ -518,8 +518,28 @@ function CallengeQuestions() {
 
   const [form, setForm] = useState(false);
   const formSubmit = () => {
-    if (firstName && lastName && email && phone) {
+    if (
+      firstName &&
+      lastName &&
+      email &&
+      phone &&
+      selectedDob &&
+      selectedDate
+    ) {
       if ((feet < 9 && inches < 10 && pounds < 351) || height1 < 180) {
+        const formData = {
+          name: `${firstName} ${lastName}`,
+          email: email,
+          phone: phone,
+          dob: selectedDob,
+          testdate: selectedDate,
+          feet: feet,
+          inches: inches,
+          pounds: pounds,
+          height: height1,
+          weight: weight1,
+        };
+        localStorage.setItem("form data", JSON.stringify(formData));
         handleFormSubmit();
       } else {
         toast.error(`
