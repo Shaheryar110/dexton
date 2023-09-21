@@ -84,9 +84,11 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
       toxicLevel: percentageTotal,
     };
     // console.log(JSON.parse(retrievedValue), "retrievedValue");
-    axios.post("http://localhost:5001/api/mail", finalData).then((data) => {
-      console.log(data, "datas");
-    });
+    axios
+      .post("https://test1.testingdemowebsites.com:5001/", finalData)
+      .then((data) => {
+        console.log(data, "datas");
+      });
   }, [totalScore]);
   return (
     <Box sx={style.bg}>
