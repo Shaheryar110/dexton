@@ -149,18 +149,21 @@ function BannerImg({ img, category, func, slide }) {
       textAlign: "center",
     },
     btn: {
-      backgroundColor: "white",
+      backgroundColor: "#04999A",
       fontWeight: 700,
-      color: "#082958",
-      marginBottom: "2rem",
+      color: "white",
+      marginBottom: { md: "2.1rem", xs: "17px" },
       fontSize: { md: "1rem", xs: "0.7rem" },
-      marginRight: { md: "3rem", xs: "1rem" },
+      marginRight: { md: "2.8rem", xs: "1rem" },
+      paddingX: { md: "64px", xs: "20px" },
+      paddingY: { md: "20px", xs: "6px" },
+      borderRadius: "60px",
       ":hover": {
         backgroundColor: "#082958",
         color: "white",
-        marginBottom: "2rem",
+        marginBottom: "2.1rem",
         fontSize: { md: "1rem", xs: "0.7rem" },
-        marginRight: "3rem",
+        marginRight: { md: "2.8rem", xs: "1rem" },
         fontWeight: 700,
         transition: "all ease 0.5s",
       },
@@ -229,15 +232,19 @@ function BannerImg({ img, category, func, slide }) {
                   />
                 </Box>
                 <Box sx={style.content}>
-                  <Typography variant="h4" sx={style.heading}>
-                    {category}
-                  </Typography>
+                  {category !== "EMOTION TEST" ? (
+                    <Typography variant="h4" sx={style.heading}>
+                      {category}
+                    </Typography>
+                  ) : (
+                    <Typography variant="h4" sx={style.heading}></Typography>
+                  )}
                   <Button variant="outlined" sx={style.btn} onClick={func}>
                     LETS STARTED
                     <TrendingFlatIcon
                       sx={{
-                        color: "#082958",
-                        ":hover": { color: "white" },
+                        color: "white",
+                        ":hover": { color: "#04999A" },
                       }}
                     />
                   </Button>

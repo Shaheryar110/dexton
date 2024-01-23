@@ -22,7 +22,7 @@ import Nervousness from "../assets/image/Nervousness.png";
 import Sucidial from "../assets/image/Sucidial.png";
 import TextField from "@mui/material/TextField";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
-import emotionImg from ".././assets/image/asdas.png";
+import emotionImg from ".././assets/image/asdas.jpg";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
