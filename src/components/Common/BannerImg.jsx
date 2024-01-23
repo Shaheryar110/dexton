@@ -232,13 +232,9 @@ function BannerImg({ img, category, func, slide }) {
                   />
                 </Box>
                 <Box sx={style.content}>
-                  {category !== "EMOTION TEST" ? (
-                    <Typography variant="h4" sx={style.heading}>
-                      {category}
-                    </Typography>
-                  ) : (
-                    <Typography variant="h4" sx={style.heading}></Typography>
-                  )}
+                  <Typography variant="h4" sx={style.heading}>
+                    {category}
+                  </Typography>
                   <Button variant="outlined" sx={style.btn} onClick={func}>
                     LETS STARTED
                     <TrendingFlatIcon

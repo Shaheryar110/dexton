@@ -5,7 +5,7 @@ import homeImg from "../assets/image/home.jpg";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import Image from "next/image";
 import bg from "../assets/image/bg.jpg";
-import back from "../assets/image/back.png";
+import back from "../assets/image/asdas.jpg";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 import Zoom from "@mui/material/Zoom";
 function HomePage() {
@@ -147,21 +147,21 @@ function HomePage() {
       paddingTop: "2rem",
     },
     btn: {
-      backgroundColor: "#082958",
+      backgroundColor: "#04999A",
       fontWeight: 700,
       color: "white",
-      marginBottom: { sm: "2rem", xs: "1rem" },
+      marginBottom: { md: "2.1rem", xs: "17px" },
       fontSize: { md: "1rem", xs: "0.7rem" },
-      marginRight: "3rem",
-      borderRadius: "50px",
-      paddingY: "1rem",
-      paddingX: { md: "3rem", xs: "1rem" },
+      marginRight: { md: "2.8rem", xs: "1rem" },
+      paddingX: { md: "64px", xs: "20px" },
+      paddingY: { md: "20px", xs: "6px" },
+      borderRadius: "60px",
       ":hover": {
         backgroundColor: "#082958",
         color: "white",
-        marginBottom: "2rem",
+        marginBottom: "2.1rem",
         fontSize: { md: "1rem", xs: "0.7rem" },
-        marginRight: "3rem",
+        marginRight: { md: "2.8rem", xs: "1rem" },
         fontWeight: 700,
         transition: "all ease 0.5s",
       },
@@ -255,7 +255,7 @@ function HomePage() {
                         <TrendingFlatIcon
                           sx={{
                             color: "white",
-                            backgroundColor: "#082958",
+                            backgroundColor: "transparent",
                             borderRadius: "50px",
                           }}
                         />
