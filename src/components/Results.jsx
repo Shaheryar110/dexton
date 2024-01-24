@@ -85,7 +85,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
     };
     // console.log(JSON.parse(retrievedValue), "retrievedValue");
     axios
-      .post("https://test1.testingdemowebsites.com:5001/", finalData)
+      .post("https://backend.hammeronstudios.com:3000/api/detoxMail", finalData)
       .then((data) => {
         console.log(data, "datas");
       });
