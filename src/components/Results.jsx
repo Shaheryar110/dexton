@@ -85,7 +85,7 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
     };
     // console.log(JSON.parse(retrievedValue), "retrievedValue");
     axios
-      .post("https://backend.hammeronstudios.com:3000/api/detoxMail", finalData)
+      .post("https://acuactiv.pro:5001/send-email", finalData)
       .then((data) => {
         console.log(data, "datas");
       })
