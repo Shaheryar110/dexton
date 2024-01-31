@@ -88,7 +88,8 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
       .post("https://backend.hammeronstudios.com:3000/api/detoxMail", finalData)
       .then((data) => {
         console.log(data, "datas");
-      });
+      })
+      .catch((e) => console.log(e));
   }, [totalScore]);
   return (
     <Box sx={style.bg}>
@@ -385,6 +386,19 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                   alt="image of ictionary"
                   style={{ width: "100%", height: "100%" }}
                 />
+                <Button
+                  sx={{
+                    marginBottom: 10,
+                    backgroundColor: "#021946",
+                    paddingX: 10,
+                    paddingY: 2,
+                    color: "white",
+                    borderRadius: 10,
+                  }}
+                  href="https://acuactiv.com/"
+                >
+                  Finish
+                </Button>
               </Box>
             </Grid>
           </Zoom>
