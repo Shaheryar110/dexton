@@ -479,12 +479,14 @@ function CallengeQuestions() {
     }
     if (emotion[currentQuestionIndex]?.categoryName) {
       setSubTotalIndex((pre) => pre + 1);
+      console.log(subTotal, "subTotal");
     } else {
       let temp = subTotal;
       temp[subtotalIndex] =
         Number(temp[subtotalIndex] || 0) + Number(activeButton || 0);
       setSubTotal(temp);
     }
+    console.log(subTotal, "subTotal");
     setTotal(total + Number(activeButton));
   };
   const handlePrevQuestion = () => {

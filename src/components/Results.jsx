@@ -72,18 +72,18 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
     const retrievedValue = JSON.parse(localStorage.getItem("form data"));
     const finalData = {
       ...retrievedValue,
-      Emotions: totalScore[0],
-      Skin: totalScore[1],
-      Ear: totalScore[2],
-      Brain: totalScore[3],
-      DigestiveSystem: totalScore[4],
-      Kidney: totalScore[5],
-      Joints: totalScore[6],
-      Metabolism: totalScore[7],
+      Emotions: totalScore[1],
+      Skin: totalScore[2],
+      Ear: totalScore[3],
+      Brain: totalScore[4],
+      DigestiveSystem: totalScore[5],
+      Kidney: totalScore[6],
+      Joints: totalScore[7],
+      Metabolism: totalScore[8],
       sum: sum,
       toxicLevel: percentageTotal,
     };
-    // console.log(JSON.parse(retrievedValue), "retrievedValue");
+    console.log(finalData, "finalData");
     axios
       .post("https://acuactiv.pro:5001/send-email", finalData)
       .then((data) => {
