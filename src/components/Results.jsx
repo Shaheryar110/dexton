@@ -9,7 +9,9 @@ import Image from "next/image";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import Zoom from "@mui/material/Zoom";
 import axios from "axios";
+import { useRouter } from "next/router";
 function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
+  const router = useRouter();
   const [slide, setSlide] = useState(true);
 
   const subTotal = typeof total === "string" ? total.split(",") : [];
@@ -67,32 +69,31 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
     setSum(arraySum);
   };
   const percentageTotal = (sum / 252) * 100;
-  useEffect(() => {
-    if (totalScore) {
-      calculateSum();
-      const retrievedValue = JSON.parse(localStorage.getItem("form data"));
-      const finalData = {
-        ...retrievedValue,
-        Emotions: totalScore[1],
-        Skin: totalScore[2],
-        Ear: totalScore[3],
-        Brain: totalScore[4],
-        DigestiveSystem: totalScore[5],
-        Kidney: totalScore[6],
-        Joints: totalScore[7],
-        Metabolism: totalScore[8],
-        sum: sum,
-        toxicLevel: percentageTotal,
-      };
-      console.log(finalData, "finalData");
-      axios
-        .post("https://acuactiv.pro:5001/send-email", finalData)
-        .then((data) => {
-          console.log(data, "datas");
-        })
-        .catch((e) => console.log(e));
-    }
-  }, [totalScore]);
+  const submitEmail = () => {
+    calculateSum();
+    const retrievedValue = JSON.parse(localStorage.getItem("form data"));
+    const finalData = {
+      ...retrievedValue,
+      Emotions: totalScore[1],
+      Skin: totalScore[2],
+      Ear: totalScore[3],
+      Brain: totalScore[4],
+      DigestiveSystem: totalScore[5],
+      Kidney: totalScore[6],
+      Joints: totalScore[7],
+      Metabolism: totalScore[8],
+      sum: sum,
+      toxicLevel: percentageTotal,
+    };
+    console.log(finalData, "finalData");
+    axios
+      .post("https://acuactiv.pro:5001/send-email", finalData)
+      .then((data) => {
+        console.log(data, "datas");
+      })
+      .catch((e) => console.log(e));
+  };
+
   return (
     <Box sx={style.bg}>
       <Typography
@@ -396,8 +397,13 @@ function Results({ total = "0, 0, 0, 0, 0, 0, 0, 0, 0" }) {
                     paddingY: 2,
                     color: "white",
                     borderRadius: 10,
+                    ":hover": {
+                      backgroundColor: "#021946",
+
+                      color: "white",
+                    },
                   }}
-                  href="https://acuactiv.com/"
+                  onClick={() => submitEmail()}
                 >
                   Finish
                 </Button>
